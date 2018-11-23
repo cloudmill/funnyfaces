@@ -106,7 +106,7 @@ body{
         }
         ul.menu{
             padding: 0;
-            max-width: 900px;
+            max-width: 85%;
             width: 900px;
             height: 100%;
             margin: 0;;
@@ -224,11 +224,11 @@ body{
                 background-size: cover;
                 background-position: right bottom;
                 .content{
-                    max-width: 900px;
+                    max-width: 85%;
                     width: 900px;
                     margin: auto;
                     h1{
-                        font:800 51px/51px @font_m;
+                        font:800 51px/60px @font_m;
                         color: white;
                         margin-bottom: 50px;
                     }
@@ -298,7 +298,6 @@ body{
                             align-items: center;
                             justify-content: center;
                             background-color: #81d2d5;
-                            padding: 100px;
                             text-align: center;
                             img{
                                 margin-top: 50px;
@@ -310,6 +309,7 @@ body{
                                 color: white;
                             }
                             p{
+                                width: 80%;
                                 font: 14px/22px @font_ad;
                                 color: #1d1e21;
                             }
@@ -352,29 +352,25 @@ body{
                         justify-content: space-between;
                         a.item{
                             display: block;
-                            flex-basis: 33%;
+                            width: 270px;
                             position: relative;
                             border: 1px solid #ddd;  
-                            margin: 0 14px;
-                            height: 280px;
-                            padding: 30px;
+                            margin-right: 28px;
+                            margin-bottom: 40px;
+                            height: 320px;
                             &.show_img{
-                                padding: 0px;
                                 border: 0;
-                                height: 320px;
+                                
                                 p{
-                                bottom: 0;
-                                left: 0;
+                                bottom: 0px;
+                                left: 0px;
                                 }
                                 h3{
+                                    position: relative;
                                     margin-top: 30px;
+                                    top: 0;
+                                    left: 0;
                                 }
-                            }
-                            &:first-child{
-                                margin-left: 0;
-                            }
-                            &:last-child{
-                                margin-right: 0;
                             }
                             img{
                                 max-width: 100%;
@@ -382,7 +378,11 @@ body{
                             h3{
                                 font: bold 17px @font_m;
                                 color: #3d3b3b;
+                                position: absolute;
                                 margin: 0;
+                                top: 30px;
+                                left: 30px;
+                                margin-right: 30px;
                             }
                             p{
                                 margin: 0;
@@ -854,6 +854,7 @@ body{
             .flex{
                 display: flex;
                 justify-content: space-between;
+                align-items:center;
                 padding:0 40px;
                 padding-top: 40px;
                 button{
@@ -951,7 +952,7 @@ body{
                             font: bold 16px @font_m;
                         }
                         &:first-child{
-                            flex-basis:45%;
+                            flex-basis:46%;
                         }
                     }
                     &.title{
@@ -976,7 +977,7 @@ body{
             }
             p{
                 font: 16px/25px @font_ad;
-                width: 55%;
+                width: 45%;
             }
             margin-bottom: 50px;
         }
@@ -1081,6 +1082,7 @@ body{
                 .navigation{
                     display: flex;
                     padding: 30px 0;
+                    align-items: center;
                     background-color: #f5f5f5;
                     justify-content: space-between;
                     >a{
@@ -1161,16 +1163,18 @@ body{
                                     margin-left: 15px;
                                     font-size: 25px;
                                 }
+                                &.disabled{
+                                    display: none;
+                                }
                                 &.add{
                                     background-color: @c_orange;
                                     color: white;
-                                    
+                                    width: 50%;
+                                    padding: 0;
                                     position: absolute;
                                     top: 0;
                                     right: 0;
-                                    &.disabled{
-                                        display: none;
-                                    }
+                                    
                                 }
                             }
                         }
@@ -1294,12 +1298,13 @@ body{
             }
             p{
                 font: 16px/25px @font_ad;
-                width: 55%;
+                width: 45%;
             }
             margin-bottom: 50px;
         }
         .product{
             padding: 150px 0;
+            height: 300px;
             .content{
                 position: relative;
                 h1{
@@ -1369,7 +1374,7 @@ body{
             }
             p{
                 font: 16px/25px @font_ad;
-                width: 55%;
+                width: 46%;
             }
             margin-bottom: 50px;
         }
@@ -1588,11 +1593,11 @@ body{
                 .popup_close{
                     position: absolute;
                     right: -30px;
-                    top: 0;
+                    top: -10px;
                     color: #b3b3b3;
                     cursor: pointer;
                     transform: rotate(45deg);
-                    font:bold 30px @font_m;
+                    font:40px @font_m;
                 }
                 h1{
                     font: 800 42px @font_m;
@@ -1642,6 +1647,7 @@ body{
             top: 0;
             width: 400px;
             height: 800px;
+            max-height: 100%;
             max-width: 100%;
             display: flex;
             flex-direction: column;
@@ -1665,6 +1671,8 @@ body{
                     &.popup_close{
                         transform: rotate(45deg);
                         cursor: pointer;
+                        font-size: 40px;
+                        font-weight: normal;
                     }
                 }
                 .col{
@@ -1738,6 +1746,8 @@ body{
                     p{
                         font: 800 30px @font_m;
                         margin: 0;
+                        text-transform: uppercase;
+                        color: #36383c;
                         &.small{
                             font: 12px @font_m;
                             color: #777778;
@@ -1760,11 +1770,13 @@ body{
                         &.dell{
                             justify-content: flex-end;
                             margin-top: 60px;
+                            text-transform: uppercase;
                             background-color: transparent;
                             font: bold 11px @font_m;
                             color: #777778;
                             img{
                                 margin-left: 10px;
+                                margin-bottom: 5px;
                             }
                         }
                     }
@@ -1849,7 +1861,7 @@ body{
             }
             p{
                 font: 16px/25px @font_ad;
-                width: 55%;
+                width: 45%;
             }
             img{
                 position: absolute;
@@ -1869,7 +1881,7 @@ body{
             padding: 30px 0;
             .content{
                 display: flex;
-                justify-content: space-between;
+                justify-content: flex-start;
                 align-items: center;
                 flex-wrap: wrap;
             }
@@ -2013,7 +2025,7 @@ body{
             }
             p{
                 font: 16px/25px @font_ad;
-                width: 55%;
+                width: 45%;
             }
         }
         .line{

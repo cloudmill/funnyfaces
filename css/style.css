@@ -92,7 +92,7 @@ body {
 }
 .wrapper .header ul.menu {
   padding: 0;
-  max-width: 900px;
+  max-width: 85%;
   width: 900px;
   height: 100%;
   margin: 0;
@@ -210,12 +210,12 @@ body {
   background-position: right bottom;
 }
 .wrapper .slider .item .section .content {
-  max-width: 900px;
+  max-width: 85%;
   width: 900px;
   margin: auto;
 }
 .wrapper .slider .item .section .content h1 {
-  font: 800 51px/51px 'Muller';
+  font: 800 51px/60px 'Muller';
   color: white;
   margin-bottom: 50px;
 }
@@ -285,7 +285,6 @@ body {
   align-items: center;
   justify-content: center;
   background-color: #81d2d5;
-  padding: 100px;
   text-align: center;
 }
 .wrapper .slider .item .section.three .row .col img {
@@ -298,6 +297,7 @@ body {
   color: white;
 }
 .wrapper .slider .item .section.three .row .col p {
+  width: 80%;
   font: 14px/22px 'PF Adamant Pro';
   color: #1d1e21;
 }
@@ -339,30 +339,25 @@ body {
 }
 .wrapper .slider .item .section.five .row a.item {
   display: block;
-  flex-basis: 33%;
+  width: 270px;
   position: relative;
   border: 1px solid #ddd;
-  margin: 0 14px;
-  height: 280px;
-  padding: 30px;
-}
-.wrapper .slider .item .section.five .row a.item.show_img {
-  padding: 0px;
-  border: 0;
+  margin-right: 28px;
+  margin-bottom: 40px;
   height: 320px;
 }
+.wrapper .slider .item .section.five .row a.item.show_img {
+  border: 0;
+}
 .wrapper .slider .item .section.five .row a.item.show_img p {
-  bottom: 0;
-  left: 0;
+  bottom: 0px;
+  left: 0px;
 }
 .wrapper .slider .item .section.five .row a.item.show_img h3 {
+  position: relative;
   margin-top: 30px;
-}
-.wrapper .slider .item .section.five .row a.item:first-child {
-  margin-left: 0;
-}
-.wrapper .slider .item .section.five .row a.item:last-child {
-  margin-right: 0;
+  top: 0;
+  left: 0;
 }
 .wrapper .slider .item .section.five .row a.item img {
   max-width: 100%;
@@ -370,7 +365,11 @@ body {
 .wrapper .slider .item .section.five .row a.item h3 {
   font: bold 17px 'Muller';
   color: #3d3b3b;
+  position: absolute;
   margin: 0;
+  top: 30px;
+  left: 30px;
+  margin-right: 30px;
 }
 .wrapper .slider .item .section.five .row a.item p {
   margin: 0;
@@ -825,6 +824,7 @@ body {
 .wrapper .order_reg .content .flex {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 0 40px;
   padding-top: 40px;
 }
@@ -918,7 +918,7 @@ body {
   font: bold 16px 'Muller';
 }
 .wrapper .order_reg .content.block .row .col:first-child {
-  flex-basis: 45%;
+  flex-basis: 46%;
 }
 .wrapper .order_reg .content.block .row.title {
   background-color: #ededed;
@@ -939,7 +939,7 @@ body {
 }
 .wrapper .make_to_order .title p {
   font: 16px/25px 'PF Adamant Pro';
-  width: 55%;
+  width: 45%;
 }
 .wrapper .make_to_order .make_postc {
   padding-top: 75px;
@@ -1041,6 +1041,7 @@ body {
 .wrapper .make_to_order .make_postc .make .navigation {
   display: flex;
   padding: 30px 0;
+  align-items: center;
   background-color: #f5f5f5;
   justify-content: space-between;
 }
@@ -1118,15 +1119,17 @@ body {
   margin-left: 15px;
   font-size: 25px;
 }
+.wrapper .make_to_order .make_postc .make .block.logo_on_postcard .title a.disabled {
+  display: none;
+}
 .wrapper .make_to_order .make_postc .make .block.logo_on_postcard .title a.add {
   background-color: #ff9c36;
   color: white;
+  width: 50%;
+  padding: 0;
   position: absolute;
   top: 0;
   right: 0;
-}
-.wrapper .make_to_order .make_postc .make .block.logo_on_postcard .title a.add.disabled {
-  display: none;
 }
 .wrapper .make_to_order .make_postc .make .block.logo_on_postcard .row .col .question {
   display: flex;
@@ -1239,10 +1242,11 @@ body {
 }
 .wrapper .production .title p {
   font: 16px/25px 'PF Adamant Pro';
-  width: 55%;
+  width: 45%;
 }
 .wrapper .production .product {
   padding: 150px 0;
+  height: 300px;
 }
 .wrapper .production .product .content {
   position: relative;
@@ -1311,7 +1315,7 @@ body {
 }
 .wrapper .contacts .title p {
   font: 16px/25px 'PF Adamant Pro';
-  width: 55%;
+  width: 46%;
 }
 .wrapper .contacts .conection {
   width: 100%;
@@ -1521,11 +1525,11 @@ body {
 .wrapper .popup_shadow .new_detal_popup .block .popup_close {
   position: absolute;
   right: -30px;
-  top: 0;
+  top: -10px;
   color: #b3b3b3;
   cursor: pointer;
   transform: rotate(45deg);
-  font: bold 30px 'Muller';
+  font: 40px 'Muller';
 }
 .wrapper .popup_shadow .new_detal_popup .block h1 {
   font: 800 42px 'Muller';
@@ -1573,6 +1577,7 @@ body {
   top: 0;
   width: 400px;
   height: 800px;
+  max-height: 100%;
   max-width: 100%;
   display: flex;
   flex-direction: column;
@@ -1599,6 +1604,8 @@ body {
 .wrapper .popup_shadow .sidebar_order .row h2.popup_close {
   transform: rotate(45deg);
   cursor: pointer;
+  font-size: 40px;
+  font-weight: normal;
 }
 .wrapper .popup_shadow .sidebar_order .row .col {
   display: flex;
@@ -1672,6 +1679,8 @@ body {
 .wrapper .popup_shadow .sidebar_order .block_gray .col p {
   font: 800 30px 'Muller';
   margin: 0;
+  text-transform: uppercase;
+  color: #36383c;
 }
 .wrapper .popup_shadow .sidebar_order .block_gray .col p.small {
   font: 12px 'Muller';
@@ -1695,12 +1704,14 @@ body {
 .wrapper .popup_shadow .sidebar_order .block_gray .col a.dell {
   justify-content: flex-end;
   margin-top: 60px;
+  text-transform: uppercase;
   background-color: transparent;
   font: bold 11px 'Muller';
   color: #777778;
 }
 .wrapper .popup_shadow .sidebar_order .block_gray .col a.dell img {
   margin-left: 10px;
+  margin-bottom: 5px;
 }
 .wrapper .popup_shadow .sidebar_order.hide {
   display: none;
@@ -1779,7 +1790,7 @@ body {
 }
 .wrapper .collection .title p {
   font: 16px/25px 'PF Adamant Pro';
-  width: 55%;
+  width: 45%;
 }
 .wrapper .collection .title img {
   position: absolute;
@@ -1799,7 +1810,7 @@ body {
 }
 .wrapper .collection .items .content {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   flex-wrap: wrap;
 }
@@ -1937,7 +1948,7 @@ body {
 }
 .wrapper .where_to_buy .title p {
   font: 16px/25px 'PF Adamant Pro';
-  width: 55%;
+  width: 45%;
 }
 .wrapper .where_to_buy .line {
   width: 100%;

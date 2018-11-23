@@ -80,12 +80,13 @@ $(document).ready(function(){
         $('.popup_shadow').removeClass('hide');
         var class_popap = String($(this).children('.id_hide').text());
         $('.popup_shadow').children(class_popap).removeClass('hide');
-        console.log($('.popup_shadow').children(class_popap))
+        $('html').css('overflow','hidden');
     })
     $('.popup_close').click(function(){
         event.preventDefault()
         $('.popup_shadow').addClass('hide');
         $('.popup_shadow > div').addClass('hide');
+        $('html').css('overflow','auto');
         $('.popup_shadow .photo_detail .container').slick('unslick');
     })
     $('.collection .item .zoom').click(function(){
