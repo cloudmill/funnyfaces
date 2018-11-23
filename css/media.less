@@ -130,14 +130,7 @@
                 .section{
                     .content{
                         width: 850px;
-                        h1{
-                            margin-top: -50px;
-                        }
                     }
-                    &.one{
-                        background-position: -450px;
-                    }
-                    
                 }
             }
         }
@@ -197,18 +190,15 @@
                     .content {
                         padding-left: 50px;
                         h1{
-                            margin-top: -90px;
+                            margin-top: 0px;
                         }
-                    }
-                    &.one{
-                        background-position: -400px;
                     }
                     &.three{
                         .row{
                             .col{
                                 justify-content: flex-start;
                                 img{
-                                    margin-top: 150px;
+                                    margin-top: 100px;
                                 }
                             }
                         }
@@ -291,6 +281,10 @@
             h3{
                 top: 125px;
             }
+            a{
+                position: relative;
+                top: -10px;
+            }
         }
         .order_reg{
             .content{
@@ -337,5 +331,72 @@
                 }
             }
         }
+        .slick-dots{
+            top: 45%;
+        }
+    }
+}
+@media(max-width : 950px){
+    .wrapper{
+        .header{
+            background: #fff;
+            &.none_bg{
+                background: #fff;
+            }
+            ul.menu{
+                display: none;
+                &.active{
+                    z-index: 12;
+                    width: 200px;
+                    display: flex;
+                    flex-direction: column;
+                    height: 300px;
+                    right: 0;
+                    left: auto;
+                    transform: none;
+                    padding: 30px;
+                    background-color: #fff;;
+                    border-radius: 0 0 0 5px;
+                    li{
+                        a{
+                            color: black;
+                            border-color: black;
+                        }
+                    }
+                    .menu_close{
+                        display: flex;
+                    }
+                }
+            }
+            a.lang{
+                display: none;
+            }
+            .burger_menu{
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+                align-items: center;
+                width: 50px;
+                border-left:1px solid #dddddd;
+                height: 100%;
+                &:before, &:after{
+                    content: '';
+                    display: block;
+                    width: 20px;
+                    height: 2px;
+                    background-color: #000;
+                    margin: 2.5px 0;
+                }
+            }
+            .cart.mini{
+                display: flex;
+            }
+        }
+        .slick-dots{
+            display: none;
+        }
+    }
+    .sidebar{
+        display: none;
     }
 }

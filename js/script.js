@@ -10,6 +10,15 @@ $(document).ready(function(){
         infinity: false
     })
     
+    function slider_collection(){
+        $('.slider_collection').slick({
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            speed: 1000,
+            arrows: true,
+            infinity: false
+        })
+    }
     $('.slider').bind('mousewheel', function(e){
         if(e.originalEvent.wheelDelta /120 > 0) {
             $('.slider').slick('slickPrev')
@@ -41,8 +50,11 @@ $(document).ready(function(){
         if(nextSlide==1 || nextSlide==2 || nextSlide==3 || nextSlide==4){
             $('.header').addClass('black');
         }
-        
     });
+    $('.slider .slider .collection').on('beforeChange', function(event, slick, currentIndex, index){
+        event.stopPropagation()
+    })
+
     $('.order_reg .divivery_type li').click(function(){
         $('.order_reg .divivery_type li').removeClass('active');
         $(this).addClass('active');
@@ -105,21 +117,32 @@ $(document).ready(function(){
         $('.popup_shadow .photo_detail').removeClass('hide');
 
     })
+    $('.burger_menu').click(function(){
+        $('.header ul.menu').addClass('active');
+    })
+    $('.menu_close').click(function(){
+        $('.header ul.menu').removeClass('active');
+    })
     
 
 
     var size_section = function(){
         height = $(window).height();
-        if(!$('.sidebar')[0]){
+        if($('.sidebar').css('display') != "flex"){
             $('.wrapper').css('width',$(window).width())
             $('.header').css('width',$(window).width())
         }
-        $('.about').css('height',height);
+        $('.about').css('min-height',height);
         $('.section').css('height',height);
         $('.popup_shadow').css('height',height);
         $('.fullpage').css('height',height);
         $('.make_to_order').css('height',height);
-        
+        if($(window).width()<=850){
+            slider_collection();
+        }
+        else{
+            $('.slider_collection').slick('unslick')
+        }
     }
     size_section();
     $(window).on('resize',function(){

@@ -74,12 +74,6 @@
   .wrapper .slider .item .section .content {
     width: 850px;
   }
-  .wrapper .slider .item .section .content h1 {
-    margin-top: -50px;
-  }
-  .wrapper .slider .item .section.one {
-    background-position: -450px;
-  }
   .wrapper .make_to_order .make_postc .make {
     width: 650px;
   }
@@ -109,16 +103,13 @@
     padding-left: 50px;
   }
   .wrapper .slider .item .section .content h1 {
-    margin-top: -90px;
-  }
-  .wrapper .slider .item .section.one {
-    background-position: -400px;
+    margin-top: 0px;
   }
   .wrapper .slider .item .section.three .row .col {
     justify-content: flex-start;
   }
   .wrapper .slider .item .section.three .row .col img {
-    margin-top: 150px;
+    margin-top: 100px;
   }
   .wrapper .slider .item .section.four .content img {
     top: 40%;
@@ -168,6 +159,10 @@
   .wrapper .page_404 h3 {
     top: 125px;
   }
+  .wrapper .page_404 a {
+    position: relative;
+    top: -10px;
+  }
   .wrapper .order_reg .content {
     padding-bottom: 20px;
   }
@@ -200,5 +195,69 @@
   }
   .wrapper .order_reg .content.block p.topic {
     padding: 25px 40px;
+  }
+  .wrapper .slick-dots {
+    top: 45%;
+  }
+}
+@media (max-width: 950px) {
+  .wrapper .header {
+    background: #fff;
+  }
+  .wrapper .header.none_bg {
+    background: #fff;
+  }
+  .wrapper .header ul.menu {
+    display: none;
+  }
+  .wrapper .header ul.menu.active {
+    z-index: 12;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    height: 300px;
+    right: 0;
+    left: auto;
+    transform: none;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 0 0 0 5px;
+  }
+  .wrapper .header ul.menu.active li a {
+    color: black;
+    border-color: black;
+  }
+  .wrapper .header ul.menu.active .menu_close {
+    display: flex;
+  }
+  .wrapper .header a.lang {
+    display: none;
+  }
+  .wrapper .header .burger_menu {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 50px;
+    border-left: 1px solid #dddddd;
+    height: 100%;
+  }
+  .wrapper .header .burger_menu:before,
+  .wrapper .header .burger_menu:after {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 2px;
+    background-color: #000;
+    margin: 2.5px 0;
+  }
+  .wrapper .header .cart.mini {
+    display: flex;
+  }
+  .wrapper .slick-dots {
+    display: none;
+  }
+  .sidebar {
+    display: none;
   }
 }

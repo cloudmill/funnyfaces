@@ -79,7 +79,7 @@ body{
     ::-moz-placeholder          {font: 16px @font_m; color: #94969b;}/* Firefox 19+ */
     :-moz-placeholder           {font: 16px @font_m; color: #94969b;}/* Firefox 18- */
     :-ms-input-placeholder {font: 16px @font_m; color: #94969b; }
-    overflow: hidden;
+    overflow-x: hidden;
     width: ~"calc(100% - 60px)";
     margin-right: auto;
     a{
@@ -150,6 +150,14 @@ body{
                 }
                 
             }
+            .menu_close{
+                display: none;
+                position: absolute;
+                right: 5px;
+                top: 5px;
+                font: 40px @font_m;
+                transform: rotate(45deg);
+            }
         }
         a.lang{
             display: flex;
@@ -163,6 +171,9 @@ body{
             background-color: @c_black;
             margin-right: 45px;
         }
+        .burger_menu{
+            display: none;
+        }
         .cart{
             border-left: 1px solid #dddddd;
             width: 60px;
@@ -171,7 +182,6 @@ body{
             justify-content: center;
             align-items: center;
             a.bag{
-                margin-top: 20px;
                 display: block;
                 position: relative;
                 span{
@@ -189,12 +199,15 @@ body{
                     font: bold 9px/9px "Open Sans";
                 }
             }
+            &.mini{
+                display: none;
+            }
         }
         &.green{
             background-image: url(../img/about_us_bg.png);
             background-repeat: no-repeat;
-            background-size: cover;
-            background-position: 0 -232px;
+            background-size: 100% auto;
+            background-position: top;
         }
         &.none_bg{
             background-color: transparent;
@@ -239,6 +252,7 @@ body{
                     }
                     p{
                         font: 16px/35px @font_ad;
+                        width: 50%;
                         &.white{
                             color: white;
                         }
@@ -279,6 +293,7 @@ body{
                 }
                 &.one{
                     background-image: url(../img/main_sec_1.png);
+                    background-position-x: center;
                 }
                 &.two{
                     background-image: url(../img/main_sec_2.png);
@@ -299,6 +314,7 @@ body{
                             justify-content: center;
                             background-color: #81d2d5;
                             text-align: center;
+                            height: 100%;
                             img{
                                 margin-top: 50px;
                                 margin-right: 30px;
@@ -313,15 +329,39 @@ body{
                                 font: 14px/22px @font_ad;
                                 color: #1d1e21;
                             }
-                            &:first-child{
+                            &.first{
                                 background-color: #dcdae2;
                             }
-                            &:last-child{
+                            &.last{
                                 background-color: #b69c8a;
                             }
                         }
+                        .slick-next, .slick-prev{
+                            bottom: -73px;
+                            top: auto;
+                        }
+                        .slick-next{
+                            &:before{
+                                content: url(../img/big_ar_right_orange.png);
+                            }
+                            right: 50px;
+                            left: auto
+                        }
+                        .slick-prev{
+                            &:before{
+                                content: url(../img/big_ar_right_orange.png);
+                            }
+                            &.hide{
+                                display: block;
+                            }
+                            right: auto;
+                            left: 50px;
+                            margin-bottom: 25px;
+                        }
                     }
                     .content{
+                        position: relative;
+                        z-index: 2;
                         height: 100px;
                         margin: auto;
                         display: flex;
@@ -547,6 +587,7 @@ body{
         .content{
             width: 900px;
             margin: auto;
+            padding-bottom: 50px;
             h1{
                 font: 800 52px @font_m;
                 color: white;
@@ -983,7 +1024,7 @@ body{
         }
         .make_postc{
             padding-top: 75px;
-            
+            background-color: #f5f5f5;
             display: flex;
             width: 100%;
             .make{
