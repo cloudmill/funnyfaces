@@ -1,0 +1,2096 @@
+@font-face {
+  font-family: 'Muller';
+  src: url('../fonts/MullerBold.eot');
+  src: url('../fonts/MullerBold.eot?#iefix') format('embedded-opentype'), url('../fonts/MullerBold.woff2') format('woff2'), url('../fonts/MullerBold.woff') format('woff'), url('../fonts/MullerBold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Avenir Next Cyr';
+  src: url('../fonts/AvenirNextCyr-Medium.eot');
+  src: url('../fonts/AvenirNextCyr-Medium.eot?#iefix') format('embedded-opentype'), url('../fonts/AvenirNextCyr-Medium.woff2') format('woff2'), url('../fonts/AvenirNextCyr-Medium.woff') format('woff'), url('../fonts/AvenirNextCyr-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Muller';
+  src: url('../fonts/MullerRegular.eot');
+  src: url('../fonts/MullerRegular.eot?#iefix') format('embedded-opentype'), url('../fonts/MullerRegular.woff2') format('woff2'), url('../fonts/MullerRegular.woff') format('woff'), url('../fonts/MullerRegular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Muller';
+  src: url('../fonts/MullerMedium.eot');
+  src: url('../fonts/MullerMedium.eot?#iefix') format('embedded-opentype'), url('../fonts/MullerMedium.woff2') format('woff2'), url('../fonts/MullerMedium.woff') format('woff'), url('../fonts/MullerMedium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Muller';
+  src: url('../fonts/MullerExtraBold.eot');
+  src: url('../fonts/MullerExtraBold.eot?#iefix') format('embedded-opentype'), url('../fonts/MullerExtraBold.woff2') format('woff2'), url('../fonts/MullerExtraBold.woff') format('woff'), url('../fonts/MullerExtraBold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'PF Adamant Pro';
+  src: url('../fonts/PFAdamantPro-Regular.eot');
+  src: url('../fonts/PFAdamantPro-Regular.eot?#iefix') format('embedded-opentype'), url('../fonts/PFAdamantPro-Regular.woff2') format('woff2'), url('../fonts/PFAdamantPro-Regular.woff') format('woff'), url('../fonts/PFAdamantPro-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+body {
+  margin: 0;
+  padding: 0;
+}
+.wrapper {
+  /* Firefox 19+ */
+  /* Firefox 18- */
+  overflow: hidden;
+  width: calc(100% - 60px);
+  margin-right: auto;
+}
+.wrapper ::-webkit-input-placeholder {
+  font: 16px 'Muller';
+  color: #94969b;
+}
+.wrapper ::-moz-placeholder {
+  font: 16px 'Muller';
+  color: #94969b;
+}
+.wrapper :-moz-placeholder {
+  font: 16px 'Muller';
+  color: #94969b;
+}
+.wrapper :-ms-input-placeholder {
+  font: 16px 'Muller';
+  color: #94969b;
+}
+.wrapper a {
+  text-decoration: none;
+}
+.wrapper .header {
+  width: calc(100% - 60px);
+  height: 75px;
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  border-bottom: 1px solid #65676f42;
+}
+.wrapper .header .logo {
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin: 20px;
+  flex-basis: 100px;
+}
+.wrapper .header ul.menu {
+  padding: 0;
+  max-width: 900px;
+  width: 900px;
+  height: 100%;
+  margin: 0;
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translate(-50%, 0%);
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+}
+.wrapper .header ul.menu li {
+  display: flex;
+  height: 100%;
+  margin: 0 10px;
+}
+.wrapper .header ul.menu li a {
+  display: flex;
+  align-items: center;
+  position: relative;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font: bold 12px/12px 'Muller';
+  color: white;
+  transition: all 1s;
+}
+.wrapper .header ul.menu li a:after {
+  content: '';
+  display: block;
+  position: absolute;
+  transition: all 1s;
+  top: 100%;
+  width: 100%;
+  height: 3px;
+  margin-top: -3px;
+  background-color: white;
+  opacity: 0;
+}
+.wrapper .header ul.menu li a:hover::after {
+  opacity: 1;
+  top: 65%;
+}
+.wrapper .header a.lang {
+  display: flex;
+  font: 500 13px/13px 'Avenir Next Cyr';
+  color: white;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  background-color: #38393c;
+  margin-right: 45px;
+}
+.wrapper .header .cart {
+  border-left: 1px solid #dddddd;
+  width: 60px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.wrapper .header .cart a.bag {
+  margin-top: 20px;
+  display: block;
+  position: relative;
+}
+.wrapper .header .cart a.bag span {
+  position: absolute;
+  bottom: 0;
+  height: 14px;
+  width: 14px;
+  border-radius: 50%;
+  transform: translate(25%, 10%);
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ff9c36;
+  font: bold 9px/9px "Open Sans";
+}
+.wrapper .header.green {
+  background-image: url(../img/about_us_bg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 0 -232px;
+}
+.wrapper .header.none_bg {
+  background-color: transparent;
+}
+.wrapper .header.black .menu li a {
+  color: #38393c;
+}
+.wrapper .header.black .menu li a:after {
+  content: '';
+  background-color: #38393c;
+}
+.wrapper .content {
+  width: 900px;
+  margin: auto;
+}
+.wrapper .slider {
+  height: 100%;
+}
+.wrapper .slider .item {
+  border: 0;
+}
+.wrapper .slider .item .section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  background-size: cover;
+  background-position: right bottom;
+}
+.wrapper .slider .item .section .content {
+  max-width: 900px;
+  width: 900px;
+  margin: auto;
+}
+.wrapper .slider .item .section .content h1 {
+  font: 800 51px/51px 'Muller';
+  color: white;
+  margin-bottom: 50px;
+}
+.wrapper .slider .item .section .content h2 {
+  font: 800 31px/40px 'Muller';
+  color: #38393c;
+  margin-bottom: 50px;
+}
+.wrapper .slider .item .section .content p {
+  font: 16px/35px 'PF Adamant Pro';
+}
+.wrapper .slider .item .section .content p.white {
+  color: white;
+}
+.wrapper .slider .item .section .content p.black {
+  color: #42444a;
+}
+.wrapper .slider .item .section .content a.link {
+  margin-top: 70px;
+  display: flex;
+  width: fit-content;
+  align-items: center;
+  font: bold 12px/12px 'Muller';
+  text-transform: uppercase;
+  color: white;
+  padding-bottom: 8px;
+  border-bottom: 3px solid white;
+  margin-bottom: 100px;
+  transition: all 1s;
+}
+.wrapper .slider .item .section .content a.link:after {
+  margin-left: 40px;
+  transition: all 1s;
+  content: url(../img/ar_right.png);
+}
+.wrapper .slider .item .section .content a.link.orange {
+  color: #ff9c36;
+  border-color: #ff9c36;
+}
+.wrapper .slider .item .section .content a.link.orange:after {
+  margin-left: 40px;
+  content: url(../img/ar_right_orange.png);
+}
+.wrapper .slider .item .section .content a.link:hover::after {
+  margin-left: 50px;
+}
+.wrapper .slider .item .section.one {
+  background-image: url(../img/main_sec_1.png);
+}
+.wrapper .slider .item .section.two {
+  background-image: url(../img/main_sec_2.png);
+  background-position: top;
+}
+.wrapper .slider .item .section.three {
+  background-color: #38393c;
+}
+.wrapper .slider .item .section.three .row {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  height: inherit;
+}
+.wrapper .slider .item .section.three .row .col {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #81d2d5;
+  padding: 100px;
+  text-align: center;
+}
+.wrapper .slider .item .section.three .row .col img {
+  margin-top: 50px;
+  margin-right: 30px;
+  transition: all 1s;
+}
+.wrapper .slider .item .section.three .row .col h2 {
+  font: 800 25px/33px 'Muller';
+  color: white;
+}
+.wrapper .slider .item .section.three .row .col p {
+  font: 14px/22px 'PF Adamant Pro';
+  color: #1d1e21;
+}
+.wrapper .slider .item .section.three .row .col:first-child {
+  background-color: #dcdae2;
+}
+.wrapper .slider .item .section.three .row .col:last-child {
+  background-color: #b69c8a;
+}
+.wrapper .slider .item .section.three .content {
+  height: 100px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.wrapper .slider .item .section.three .content a {
+  margin: 0;
+}
+.wrapper .slider .item .section.four {
+  background-color: #dacdc3;
+}
+.wrapper .slider .item .section.four .content {
+  position: relative;
+}
+.wrapper .slider .item .section.four .content img {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+.wrapper .slider .item .section.five {
+  background: white;
+}
+.wrapper .slider .item .section.five .row {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+.wrapper .slider .item .section.five .row a.item {
+  display: block;
+  flex-basis: 33%;
+  position: relative;
+  border: 1px solid #ddd;
+  margin: 0 14px;
+  height: 280px;
+  padding: 30px;
+}
+.wrapper .slider .item .section.five .row a.item.show_img {
+  padding: 0px;
+  border: 0;
+  height: 320px;
+}
+.wrapper .slider .item .section.five .row a.item.show_img p {
+  bottom: 0;
+  left: 0;
+}
+.wrapper .slider .item .section.five .row a.item.show_img h3 {
+  margin-top: 30px;
+}
+.wrapper .slider .item .section.five .row a.item:first-child {
+  margin-left: 0;
+}
+.wrapper .slider .item .section.five .row a.item:last-child {
+  margin-right: 0;
+}
+.wrapper .slider .item .section.five .row a.item img {
+  max-width: 100%;
+}
+.wrapper .slider .item .section.five .row a.item h3 {
+  font: bold 17px 'Muller';
+  color: #3d3b3b;
+  margin: 0;
+}
+.wrapper .slider .item .section.five .row a.item p {
+  margin: 0;
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+  font: 11px 'Muller';
+  color: #969696;
+}
+.wrapper .slider .item .section.footer_slide {
+  background: none;
+  position: relative;
+  overflow: hidden;
+}
+.wrapper .slider .item .section.footer_slide #map {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+.wrapper .slider .item .section.footer_slide img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1;
+}
+.wrapper .slider .item .section.footer_slide .content {
+  position: absolute;
+  display: flex;
+  left: 50%;
+  transform: translate(-50%, 0);
+  top: 11%;
+  align-items: center;
+}
+.wrapper .slider .item .section.footer_slide .content h2 {
+  font: 800 30px 'Muller';
+  color: white;
+  margin-right: 100px;
+}
+.wrapper .slider .item .section.footer_slide .content p {
+  display: flex;
+  align-items: center;
+  font: 16px/30px 'PF Adamant Pro';
+  color: white;
+}
+.wrapper .slider .slick-next,
+.wrapper .slider .slick-prev {
+  left: 30px;
+  right: auto;
+  bottom: 40px;
+  height: 32px;
+  width: 32px;
+  top: auto;
+  z-index: 10;
+}
+.wrapper .slider .slick-next:before,
+.wrapper .slider .slick-prev:before {
+  display: block;
+  height: 32px;
+  width: 32px;
+  content: url(../img/main_ar_white.png);
+}
+.wrapper .slider .slick-next.gray:before,
+.wrapper .slider .slick-prev.gray:before {
+  content: url(../img/main_ar.png);
+}
+.wrapper .slider .slick-next.hide,
+.wrapper .slider .slick-prev.hide {
+  display: none;
+}
+.wrapper .slider .slick-prev {
+  bottom: 55px;
+  transform: rotate(180deg);
+}
+.wrapper .slider .slick-prev:before {
+  content: url(../img/main_ar.png);
+}
+.wrapper .slick-dots {
+  width: 372px;
+  height: 31px;
+  transform: rotate(90deg);
+  top: 50%;
+  margin-left: -186px;
+  left: 40px;
+}
+.wrapper .slick-dots li {
+  margin: 0 21px;
+}
+.wrapper .slick-dots li button {
+  border: 2px solid white;
+  border-radius: 50%;
+  background-color: transparent;
+  height: 6px;
+  width: 6px;
+  padding: 0;
+}
+.wrapper .slick-dots li button::before {
+  display: none;
+}
+.wrapper .slick-dots li button.gray {
+  border-color: #a6a6a6;
+}
+.wrapper .slick-dots .slick-active button {
+  border: 0;
+  height: 8px;
+  width: 8px;
+  background-color: #ff9c36;
+}
+.wrapper .breadcrumbs {
+  list-style: none;
+  display: flex;
+  padding: 0;
+  padding-top: 120px;
+  width: 900px;
+  margin: 0 auto;
+}
+.wrapper .breadcrumbs li a {
+  font: 13px 'Muller';
+  color: white;
+  text-decoration: none;
+}
+.wrapper .breadcrumbs li:after {
+  content: ">";
+  color: white;
+  margin: 0 15px;
+}
+.wrapper .breadcrumbs li:last-child:after {
+  content: '';
+}
+.wrapper .breadcrumbs.gray li a {
+  color: #8b8d94;
+}
+.wrapper .breadcrumbs.gray li:after {
+  color: #8b8d94;
+}
+.wrapper .about {
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+.wrapper .about img.bg {
+  position: absolute;
+  z-index: -1;
+  min-width: 100%;
+  min-height: 100%;
+  bottom: 0;
+  right: 0;
+}
+.wrapper .about .content {
+  width: 900px;
+  margin: auto;
+}
+.wrapper .about .content h1 {
+  font: 800 52px 'Muller';
+  color: white;
+  margin: 0;
+  margin-top: 80px;
+}
+.wrapper .about .content h3 {
+  margin-top: 80px;
+  font: 800 28px 'Muller';
+  color: white;
+}
+.wrapper .about .content p {
+  width: 440px;
+  font: 16px/30px 'PF Adamant Pro';
+  color: white;
+}
+.wrapper .prizes_tea {
+  background-color: white;
+  padding-top: 80px;
+}
+.wrapper .prizes_tea .content {
+  width: 900px;
+  margin: auto;
+}
+.wrapper .prizes_tea .content h3 {
+  font: 800 30px 'Muller';
+}
+.wrapper .prizes_tea .content .items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.wrapper .prizes_tea .content .items .item {
+  flex-basis: 28%;
+  margin: 0 20px;
+  margin-top: 50px;
+  max-width: 280px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.wrapper .prizes_tea .content .items .item img {
+  margin-bottom: 30px;
+  height: 80px;
+}
+.wrapper .prizes_tea .content .items .item img.min {
+  height: 50px;
+  margin-bottom: 60px;
+}
+.wrapper .prizes_tea .content .items .item p {
+  font: 16px 'PF Adamant Pro';
+}
+.wrapper .prizes_tea .content .left {
+  margin-top: 180px;
+  width: 50%;
+  padding-bottom: 180px;
+  position: relative;
+}
+.wrapper .prizes_tea .content .left img {
+  position: absolute;
+  left: 100%;
+  transform: translate(0, -25%);
+}
+.wrapper .prizes_tea .content .left h3 {
+  font: 800 30px 'Muller';
+}
+.wrapper .prizes_tea .content .left p {
+  font: 16px 'PF Adamant Pro';
+  color: #6b6b6b;
+}
+.wrapper .prizes_tea .content .left p.bold {
+  font: bold 20px 'Muller';
+  margin-top: 60px;
+  color: black;
+  margin-bottom: 60px;
+}
+.wrapper .prizes_tea .content .left a.link {
+  margin-top: 70px;
+  display: flex;
+  width: fit-content;
+  align-items: center;
+  font: bold 12px/12px 'Muller';
+  text-transform: uppercase;
+  color: white;
+  padding-bottom: 8px;
+  border-bottom: 3px solid white;
+  margin-bottom: 100px;
+  transition: all 1s;
+}
+.wrapper .prizes_tea .content .left a.link:after {
+  margin-left: 40px;
+  transition: all 1s;
+  content: url(../img/ar_right.png);
+}
+.wrapper .prizes_tea .content .left a.link.orange {
+  color: #ff9c36;
+  border-color: #ff9c36;
+}
+.wrapper .prizes_tea .content .left a.link.orange:after {
+  margin-left: 40px;
+  content: url(../img/ar_right_orange.png);
+}
+.wrapper .prizes_tea .content .left a.link:hover::after {
+  margin-left: 50px;
+}
+.wrapper .order_reg {
+  background-color: #f5f5f5;
+  padding-bottom: 80px;
+}
+.wrapper .order_reg .title {
+  background-color: #fff;
+  margin-bottom: 50px;
+}
+.wrapper .order_reg .title h1 {
+  font: 800 54px 'Muller';
+}
+.wrapper .order_reg .content {
+  padding-bottom: 40px;
+  border-radius: 8px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+}
+.wrapper .order_reg .content p.location {
+  margin: 0;
+  padding: 40px 50px;
+  font: bold 13px 'Muller';
+  color: #969797;
+}
+.wrapper .order_reg .content p.location a {
+  margin-left: 8px;
+  font: 500 15px 'Muller';
+  color: #ff9c36;
+  border-bottom: 1px dashed #ff9c36;
+}
+.wrapper .order_reg .content ul.divivery_type {
+  user-select: none;
+  display: flex;
+  list-style: none;
+  margin: 0;
+  width: 100%;
+  padding: 0;
+}
+.wrapper .order_reg .content ul.divivery_type li {
+  border: 1px solid #e3e3e3;
+  padding: 40px 45px;
+  flex-basis: 50%;
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+}
+.wrapper .order_reg .content ul.divivery_type li .check {
+  margin-right: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+  width: 48px;
+  border-radius: 50%;
+  border: 1px solid #e3e3e3;
+  background-color: transparent;
+}
+.wrapper .order_reg .content ul.divivery_type li .check svg path {
+  fill: #e3e3e3;
+}
+.wrapper .order_reg .content ul.divivery_type li p {
+  font: 500 18px 'Muller';
+  color: black;
+}
+.wrapper .order_reg .content ul.divivery_type li p span {
+  font: 500 13px 'Muller';
+  color: #ff8500;
+}
+.wrapper .order_reg .content ul.divivery_type li.active .check {
+  border-color: transparent;
+  background-color: #ff8500;
+}
+.wrapper .order_reg .content ul.divivery_type li.active .check svg path {
+  fill: white;
+}
+.wrapper .order_reg .content ul.divivery_type li:first-child {
+  border-left: none;
+  border-right: none;
+}
+.wrapper .order_reg .content ul.divivery_type li:last-child {
+  border-right: none;
+}
+.wrapper .order_reg .content h3 {
+  font: 500 18px 'Muller';
+  margin: 0;
+  padding: 40px;
+}
+.wrapper .order_reg .content .delivery_method,
+.wrapper .order_reg .content .pay {
+  user-select: none;
+  display: flex;
+  justify-content: space-around;
+  padding: 0 40px;
+}
+.wrapper .order_reg .content .delivery_method .item,
+.wrapper .order_reg .content .pay .item {
+  cursor: pointer;
+  margin: 0 15px;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 7px;
+  align-items: center;
+  border: 2px solid #f5f5f5;
+}
+.wrapper .order_reg .content .delivery_method .item p,
+.wrapper .order_reg .content .pay .item p {
+  font: 500 14px 'Muller';
+  padding: 0;
+  margin-top: 50px;
+}
+.wrapper .order_reg .content .delivery_method .item.active,
+.wrapper .order_reg .content .pay .item.active {
+  border: 2px solid #ff9c36;
+}
+.wrapper .order_reg .content .delivery_method .item.active p,
+.wrapper .order_reg .content .pay .item.active p {
+  color: #ff9c36;
+}
+.wrapper .order_reg .content .delivery_method .item:first-child,
+.wrapper .order_reg .content .pay .item:first-child {
+  margin-left: 0;
+}
+.wrapper .order_reg .content .delivery_method .item:last-child,
+.wrapper .order_reg .content .pay .item:last-child {
+  margin-right: 0;
+}
+.wrapper .order_reg .content .pay {
+  margin-bottom: 40px;
+}
+.wrapper .order_reg .content .pay .item {
+  flex-basis: 50%;
+}
+.wrapper .order_reg .content .row {
+  display: flex;
+  justify-content: space-between;
+  padding-right: 40px;
+  border-bottom: 1px solid #e5e5e5;
+}
+.wrapper .order_reg .content .row .left {
+  margin-top: 40px;
+  padding-left: 40px;
+  margin-bottom: 15px;
+}
+.wrapper .order_reg .content .row .left .row {
+  border: 0;
+}
+.wrapper .order_reg .content .row .left p.col {
+  width: 440px;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin-bottom: 25px;
+}
+.wrapper .order_reg .content .row .left p.col label {
+  font: 16px 'Muller';
+  margin-bottom: 10px;
+}
+.wrapper .order_reg .content .row .left p.col input {
+  border: 1px solid #dddddd;
+  border-radius: 5px;
+  padding: 15px;
+}
+.wrapper .order_reg .content .row .left p.col input.correct {
+  border-color: #95c94a;
+}
+.wrapper .order_reg .content .row .left p.col input.uncorrect {
+  border-color: red;
+}
+.wrapper .order_reg .content .row .left p.col.comment input {
+  height: 120px;
+  font: 16px 'Muller';
+}
+.wrapper .order_reg .content .row .left .row p.col {
+  width: 290px;
+}
+.wrapper .order_reg .content .row .left .row p.col.smoll {
+  width: 70px;
+  margin-left: 5px;
+}
+.wrapper .order_reg .content .row .right {
+  margin-top: 60px;
+  font: 500 18px 'Muller';
+}
+.wrapper .order_reg .content .row .right span {
+  font: 14px 'Muller';
+}
+.wrapper .order_reg .content h3.personal {
+  padding-bottom: 0;
+}
+.wrapper .order_reg .content h3.personal + .row .left {
+  margin-top: 10px;
+}
+.wrapper .order_reg .content .flex {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 40px;
+  padding-top: 40px;
+}
+.wrapper .order_reg .content .flex button {
+  border-radius: 30px;
+  padding: 0 30px;
+  height: 60px;
+  background-color: #ff9c36;
+  font: bold 16px 'Muller';
+  color: white;
+  text-transform: uppercase;
+  border: 0;
+  cursor: pointer;
+}
+.wrapper .order_reg .content .flex label {
+  display: flex;
+  user-select: none;
+  cursor: pointer;
+}
+.wrapper .order_reg .content .flex label:before {
+  content: '';
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  background-color: #fff;
+  height: 40px;
+  margin-right: 25px;
+  width: 40px;
+  border-radius: 50%;
+  border: 1px solid #e5e5e5;
+}
+.wrapper .order_reg .content .flex input {
+  display: none;
+}
+.wrapper .order_reg .content .flex input:checked + label:before {
+  background-color: #ff9c36;
+  border-color: transparent;
+  content: url(../img/check.svg);
+}
+.wrapper .order_reg .content .samov,
+.wrapper .order_reg .content .deliv {
+  display: none;
+}
+.wrapper .order_reg .content .samov.active,
+.wrapper .order_reg .content .deliv.active {
+  display: block;
+}
+.wrapper .order_reg .content .samov .row {
+  padding: 40px 0;
+  padding-right: 40px;
+}
+.wrapper .order_reg .content .samov .row .col {
+  padding-left: 40px;
+}
+.wrapper .order_reg .content .samov .row .col p.bold {
+  font: 500 18px 'Muller';
+}
+.wrapper .order_reg .content .samov .row .col p {
+  font: 16px 'Muller';
+}
+.wrapper .order_reg .content .samov .row .col p a {
+  font: 500 16px 'Muller';
+  color: #ff9c36;
+  border-bottom: 1px dashed #ff9c36;
+}
+.wrapper .order_reg .content.block {
+  padding-bottom: 0;
+  margin-top: 50px;
+}
+.wrapper .order_reg .content.block p {
+  padding: 30px 40px;
+  margin: 0;
+  font: 16px/22px 'Muller';
+  color: #38393c;
+}
+.wrapper .order_reg .content.block p.topic {
+  margin: 0;
+  font: bold 13px 'Muller';
+  padding: 30px 40px;
+  color: #969797;
+  text-transform: uppercase;
+}
+.wrapper .order_reg .content.block .row .col {
+  flex-basis: 25%;
+}
+.wrapper .order_reg .content.block .row .col p {
+  font-size: 14px;
+}
+.wrapper .order_reg .content.block .row .col p.bold {
+  font: bold 16px 'Muller';
+}
+.wrapper .order_reg .content.block .row .col:first-child {
+  flex-basis: 45%;
+}
+.wrapper .order_reg .content.block .row.title {
+  background-color: #ededed;
+  margin: 0;
+}
+.wrapper .order_reg .content.block .row:last-child {
+  border: 0;
+}
+.wrapper .make_to_order {
+  background-color: #f5f5f5;
+}
+.wrapper .make_to_order .title {
+  background-color: #fff;
+  margin-bottom: 50px;
+}
+.wrapper .make_to_order .title h1 {
+  font: 800 54px 'Muller';
+}
+.wrapper .make_to_order .title p {
+  font: 16px/25px 'PF Adamant Pro';
+  width: 55%;
+}
+.wrapper .make_to_order .make_postc {
+  padding-top: 75px;
+  display: flex;
+  width: 100%;
+}
+.wrapper .make_to_order .make_postc .make {
+  width: 900px;
+  margin: auto;
+  background-color: #fff;
+  margin-top: 30px;
+}
+.wrapper .make_to_order .make_postc .make h3 {
+  font: bold 21px 'Muller';
+  margin: 0;
+  padding: 30px 50px;
+}
+.wrapper .make_to_order .make_postc .make .row {
+  display: flex;
+  border-top: 1px solid #d7d8da;
+  height: 430px;
+}
+.wrapper .make_to_order .make_postc .make .row .col {
+  flex-basis: 50%;
+  height: 100%;
+  padding: 0 50px;
+}
+.wrapper .make_to_order .make_postc .make .row .col:last-child {
+  background-color: #d1d1d1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.wrapper .make_to_order .make_postc .make .row .col h3 {
+  font: bold 21px 'Muller';
+  padding-left: 0;
+  padding-bottom: 0;
+}
+.wrapper .make_to_order .make_postc .make .row .col p {
+  font: 13px 'PF Adamant Pro';
+  color: #66686c;
+}
+.wrapper .make_to_order .make_postc .make .row .col p.question {
+  position: absolute;
+  top: 129px;
+  left: 50%;
+  margin: 0;
+  padding-left: 5px;
+  transform: translate(-50%, 0);
+  font-size: 35px;
+  color: #7c6f57;
+}
+.wrapper .make_to_order .make_postc .make .row .col p.question.disabled {
+  display: none;
+}
+.wrapper .make_to_order .make_postc .make .row .col a {
+  font: bold 12px 'Muller';
+  color: #ff9c36;
+  max-width: 330px;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 3px;
+  padding: 20px 30px;
+  border: 1px solid #ff9c36;
+  align-items: center;
+  margin-top: 30px;
+}
+.wrapper .make_to_order .make_postc .make .row .col a span {
+  font-size: 20px;
+}
+.wrapper .make_to_order .make_postc .make .row .col a.selected {
+  border-color: #83d16f;
+  color: black;
+}
+.wrapper .make_to_order .make_postc .make .row .col a.selected span {
+  transform: rotate(45deg);
+}
+.wrapper .make_to_order .make_postc .make .row .col img {
+  position: relative;
+}
+.wrapper .make_to_order .make_postc .make .row .col img.face {
+  position: absolute;
+  z-index: 0;
+  left: 50%;
+  top: 121px;
+  margin-left: 4px;
+  transform: translate(-50%, 0);
+  max-height: 50px;
+  max-width: 50px;
+}
+.wrapper .make_to_order .make_postc .make .row .col img.zoom {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  cursor: pointer;
+}
+.wrapper .make_to_order .make_postc .make .navigation {
+  display: flex;
+  padding: 30px 0;
+  background-color: #f5f5f5;
+  justify-content: space-between;
+}
+.wrapper .make_to_order .make_postc .make .navigation > a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 175px;
+  height: 64px;
+  border: 1px solid #ff9c36;
+  background-color: transparent;
+  border-radius: 32px;
+  color: #ff9c36;
+  text-align: center;
+  font: bold 16px 'Muller';
+}
+.wrapper .make_to_order .make_postc .make .navigation > a.disabled {
+  background-color: #e2e2e2;
+  border-color: #e2e2e2;
+  color: #a8a9a9;
+  cursor: default;
+}
+.wrapper .make_to_order .make_postc .make .navigation ul {
+  list-style: none;
+  margin: 0;
+  display: flex;
+  padding: 0;
+  align-items: center;
+}
+.wrapper .make_to_order .make_postc .make .navigation ul li a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 3px;
+  height: 54px;
+  width: 54px;
+  border-radius: 50%;
+  border: 1px solid #a8a9a9;
+  background-color: transparent;
+  color: #a8a9a9;
+  font: 500 16px 'Muller';
+}
+.wrapper .make_to_order .make_postc .make .navigation ul li.active a {
+  color: white;
+  background-color: #ff9c36;
+  border-color: #ff9c36;
+}
+.wrapper .make_to_order .make_postc .make .block {
+  display: none;
+}
+.wrapper .make_to_order .make_postc .make .block.logo_on_postcard .title {
+  margin-bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+.wrapper .make_to_order .make_postc .make .block.logo_on_postcard .title h3 {
+  border-right: 1px solid #dddddd;
+  flex-basis: 50%;
+}
+.wrapper .make_to_order .make_postc .make .block.logo_on_postcard .title a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  flex-basis: 50%;
+  padding: 0 50px;
+  font: bold 12px 'Muller';
+  text-transform: uppercase;
+  color: #dddddd;
+}
+.wrapper .make_to_order .make_postc .make .block.logo_on_postcard .title a span {
+  transform: rotate(45deg);
+  margin-left: 15px;
+  font-size: 25px;
+}
+.wrapper .make_to_order .make_postc .make .block.logo_on_postcard .title a.add {
+  background-color: #ff9c36;
+  color: white;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.wrapper .make_to_order .make_postc .make .block.logo_on_postcard .title a.add.disabled {
+  display: none;
+}
+.wrapper .make_to_order .make_postc .make .block.logo_on_postcard .row .col .question {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  height: 56px;
+  margin-left: -55px;
+  top: 95px;
+  width: 56px;
+  border-radius: 50%;
+  border: 2px dashed #ff9c36;
+  color: #ff9c36;
+}
+.wrapper .make_to_order .make_postc .make .block.logo_on_postcard .row .col .question.disabled {
+  display: none;
+}
+.wrapper .make_to_order .make_postc .make .block.logo_on_postcard .row .col .face {
+  margin-left: -55px;
+  top: 100px;
+  z-index: 1;
+}
+.wrapper .make_to_order .make_postc .make .block.logo_on_postcard .row.opacity {
+  opacity: 0.2;
+  user-select: none;
+}
+.wrapper .make_to_order .make_postc .make .block.active {
+  display: block;
+}
+.wrapper .make_to_order .make_postc .postcard {
+  border: 1px solid  #d7d8da;
+  width: 400px;
+  max-height: 722px;
+  background-color: #fff;
+}
+.wrapper .make_to_order .make_postc .postcard h3 {
+  font: 800 24px 'Muller';
+  text-align: center;
+  margin: 0;
+  padding: 25px 0;
+  border-bottom: 1px solid  #d7d8da;
+}
+.wrapper .make_to_order .make_postc .postcard img {
+  padding: 30px 0;
+  display: block;
+  margin: auto;
+}
+.wrapper .make_to_order .make_postc .postcard h4 {
+  margin: 0;
+  padding: 25px 40px;
+  border-top: 1px solid #d7d8da;
+  font: bold 18px 'Muller';
+}
+.wrapper .make_to_order .make_postc .postcard .row {
+  margin-bottom: 30px;
+  display: flex;
+  padding: 0 25px;
+}
+.wrapper .make_to_order .make_postc .postcard .row .col {
+  flex-basis: 50%;
+}
+.wrapper .make_to_order .make_postc .postcard .row .col .block {
+  height: 50px;
+  width: 143px;
+  border: 1px solid #d7d8da;
+  border-radius: 3px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.wrapper .make_to_order .make_postc .postcard .row .col .block .str {
+  height: 18px;
+  width: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #d7d8da;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.wrapper .make_to_order .make_postc .postcard .row .col .block .str p {
+  color: white;
+  font-size: 17px;
+}
+.wrapper .make_to_order .make_postc .postcard .row .col .block .str:last-child p {
+  position: relative;
+  top: 2px;
+}
+.wrapper .make_to_order .make_postc .postcard .row .col .block .value {
+  font: 17px 'Muller';
+}
+.wrapper .make_to_order .make_postc .postcard .row .col a {
+  display: flex;
+  background-color: #ff9c36;
+  height: 50px;
+  border-radius: 25px;
+  width: 175px;
+  font: 15px 'Muller';
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-transform: uppercase;
+}
+.wrapper .production .title {
+  background-color: #fff;
+  margin-bottom: 50px;
+}
+.wrapper .production .title h1 {
+  font: 800 54px 'Muller';
+}
+.wrapper .production .title p {
+  font: 16px/25px 'PF Adamant Pro';
+  width: 55%;
+}
+.wrapper .production .product {
+  padding: 150px 0;
+}
+.wrapper .production .product .content {
+  position: relative;
+}
+.wrapper .production .product .content h1 {
+  font: 800 42px/50px 'Muller';
+  letter-spacing: 2px;
+  color: white;
+  text-transform: uppercase;
+}
+.wrapper .production .product .content p {
+  font: 14px/25px 'PF Adamant Pro';
+}
+.wrapper .production .product .content a.link {
+  margin-top: 70px;
+  display: flex;
+  width: fit-content;
+  align-items: center;
+  font: bold 12px/12px 'Muller';
+  text-transform: uppercase;
+  color: white;
+  padding-bottom: 8px;
+  border-bottom: 3px solid white;
+  margin-bottom: 100px;
+  transition: all 1s;
+}
+.wrapper .production .product .content a.link:after {
+  margin-left: 40px;
+  transition: all 1s;
+  content: url(../img/ar_right.png);
+}
+.wrapper .production .product .content a.link.orange {
+  color: #ff9c36;
+  border-color: #ff9c36;
+}
+.wrapper .production .product .content a.link.orange:after {
+  margin-left: 40px;
+  content: url(../img/ar_right_orange.png);
+}
+.wrapper .production .product .content a.link:hover::after {
+  margin-left: 50px;
+}
+.wrapper .production .product .content img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: block;
+  max-width: 420px;
+  max-height: 380px;
+}
+.wrapper .production .product.one {
+  background: linear-gradient(to top, #c3bdca, #dfdce4);
+}
+.wrapper .production .product.two {
+  background: linear-gradient(to top, #45b2b8, #84d7da);
+}
+.wrapper .production .product.three {
+  background: linear-gradient(to top, #ab8f7a, #cebeb2);
+}
+.wrapper .contacts .title {
+  background-color: #fff;
+  margin-bottom: 50px;
+}
+.wrapper .contacts .title h1 {
+  font: 800 54px 'Muller';
+}
+.wrapper .contacts .title p {
+  font: 16px/25px 'PF Adamant Pro';
+  width: 55%;
+}
+.wrapper .contacts .conection {
+  width: 100%;
+  background-color: #f5f5f5;
+}
+.wrapper .contacts .conection .content {
+  position: relative;
+}
+.wrapper .contacts .conection .content .row {
+  display: flex;
+  width: 100%;
+}
+.wrapper .contacts .conection .content .row .col {
+  flex-basis: 50%;
+}
+.wrapper .contacts .conection .content .row .col form {
+  display: flex;
+  flex-wrap: wrap;
+}
+.wrapper .contacts .conection .content .row .col form label {
+  font: 16px 'Muller';
+  margin-bottom: 15px;
+  margin-top: 30px;
+  display: block;
+  flex-basis: 100%;
+}
+.wrapper .contacts .conection .content .row .col form input {
+  flex-basis: 100%;
+  border: 1px solid #dddddd;
+  border-radius: 5px;
+  padding: 15px;
+}
+.wrapper .contacts .conection .content .row .col form input.correct {
+  border-color: #95c94a;
+}
+.wrapper .contacts .conection .content .row .col form input.uncorrect {
+  border-color: red;
+}
+.wrapper .contacts .conection .content .row .col form input#mess {
+  height: 225px;
+}
+.wrapper .contacts .conection .content .row .col form button {
+  border: 0;
+  color: white;
+  background-color: #ff9c36;
+  border-radius: 30px;
+  height: 60px;
+  width: 175px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  font: bold 16px 'Muller';
+  margin: 40px 0 130px 0;
+  cursor: pointer;
+}
+.wrapper .contacts .conection .content .row .col .block {
+  position: relative;
+  left: 20%;
+  border-radius: 3px;
+  padding: 30px;
+  margin-top: 65px;
+  background-color: #38393c;
+}
+.wrapper .contacts .conection .content .row .col .block p {
+  font: 14px 'Muller';
+  color: #cdcdcd;
+  margin-bottom: 3px;
+}
+.wrapper .contacts .conection .content .row .col .block > a {
+  display: block;
+  border-bottom: 1px solid #5f6063;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+.wrapper .contacts .conection .content .row .col .block > a.phone {
+  font: bold 18px 'Muller';
+  color: white;
+}
+.wrapper .contacts .conection .content .row .col .block > a.mail {
+  font: 18px 'Muller';
+  color: #ff9c36;
+}
+.wrapper .contacts .conection .content .row .col .block .row a {
+  margin-top: 20px;
+  margin-right: 20px;
+}
+.wrapper .news .title {
+  background-color: #fff;
+  margin-bottom: 50px;
+}
+.wrapper .news .title h1 {
+  font: 800 54px 'Muller';
+}
+.wrapper .news .items .content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.wrapper .news .items .content a.item {
+  display: block;
+  width: 270px;
+  position: relative;
+  border: 1px solid #ddd;
+  margin-right: 28px;
+  margin-bottom: 40px;
+  height: 320px;
+}
+.wrapper .news .items .content a.item.show_img {
+  border: 0;
+}
+.wrapper .news .items .content a.item.show_img p {
+  bottom: 0px;
+  left: 0px;
+}
+.wrapper .news .items .content a.item.show_img h3 {
+  position: relative;
+  margin-top: 30px;
+  top: 0;
+  left: 0;
+}
+.wrapper .news .items .content a.item img {
+  max-width: 100%;
+}
+.wrapper .news .items .content a.item h3 {
+  font: bold 17px 'Muller';
+  color: #3d3b3b;
+  position: absolute;
+  margin: 0;
+  top: 30px;
+  left: 30px;
+  margin-right: 30px;
+}
+.wrapper .news .items .content a.item p {
+  margin: 0;
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+  font: 11px 'Muller';
+  color: #969696;
+}
+.wrapper .news .items a.link {
+  display: flex;
+  width: fit-content;
+  align-items: center;
+  font: bold 12px/12px 'Muller';
+  text-transform: uppercase;
+  color: white;
+  padding-bottom: 8px;
+  border-bottom: 3px solid white;
+  margin: 50px auto;
+  margin-top: 20px;
+  transition: all 1s;
+}
+.wrapper .news .items a.link:after {
+  margin-left: 40px;
+  transition: all 1s;
+  content: url(../img/ar_right.png);
+}
+.wrapper .news .items a.link.orange {
+  color: #ff9c36;
+  border-color: #ff9c36;
+}
+.wrapper .news .items a.link.orange:after {
+  margin-left: 40px;
+  font-size: 22px;
+  content: '+';
+}
+.wrapper .news .items a.link:hover::after {
+  margin-left: 50px;
+}
+.wrapper .popup_shadow {
+  position: fixed;
+  width: 100%;
+  z-index: 11;
+  top: 0;
+  left: 0;
+  overflow: auto;
+  background: rgba(0, 0, 0, 0.7);
+}
+.wrapper .popup_shadow .new_detal_popup {
+  width: 100%;
+  padding: 120px 0;
+}
+.wrapper .popup_shadow .new_detal_popup .block {
+  padding: 0px 80px 50px 80px;
+  position: relative;
+  margin: 0px auto;
+  width: 700px;
+  padding-top: 500px;
+  background-color: #fff;
+  border-radius: 3px;
+}
+.wrapper .popup_shadow .new_detal_popup .block img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  max-height: 500px;
+}
+.wrapper .popup_shadow .new_detal_popup .block .line {
+  width: 100%;
+  height: 1px;
+  background-color: #b3b3b3;
+  margin: 30px 0;
+}
+.wrapper .popup_shadow .new_detal_popup .block .popup_close {
+  position: absolute;
+  right: -30px;
+  top: 0;
+  color: #b3b3b3;
+  cursor: pointer;
+  transform: rotate(45deg);
+  font: bold 30px 'Muller';
+}
+.wrapper .popup_shadow .new_detal_popup .block h1 {
+  font: 800 42px 'Muller';
+}
+.wrapper .popup_shadow .new_detal_popup .block p {
+  font: 16px 'PF Adamant Pro';
+}
+.wrapper .popup_shadow .new_detal_popup .block p.date {
+  font: 13px 'Muller';
+  color: #969696;
+}
+.wrapper .popup_shadow .new_detal_popup .block a.link {
+  margin-top: 140px;
+  display: flex;
+  width: fit-content;
+  align-items: center;
+  font: bold 12px/12px 'Muller';
+  text-transform: uppercase;
+  color: white;
+  padding-bottom: 8px;
+  border-bottom: 3px solid white;
+  margin-bottom: 0px;
+  transition: all 1s;
+}
+.wrapper .popup_shadow .new_detal_popup .block a.link:before {
+  margin-right: 40px;
+  transition: all 1s;
+  transform: rotate(180deg);
+  content: url(../img/ar_right.png);
+}
+.wrapper .popup_shadow .new_detal_popup .block a.link.orange {
+  color: #ff9c36;
+  border-color: #ff9c36;
+}
+.wrapper .popup_shadow .new_detal_popup .block a.link.orange:before {
+  margin-right: 40px;
+  content: url(../img/ar_right_orange.png);
+}
+.wrapper .popup_shadow .new_detal_popup.hide {
+  display: none;
+}
+.wrapper .popup_shadow .sidebar_order {
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 400px;
+  height: 800px;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  z-index: 11;
+  background-color: #fff;
+}
+.wrapper .popup_shadow .sidebar_order .row {
+  padding: 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #dcdcdc;
+}
+.wrapper .popup_shadow .sidebar_order .row .product {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+.wrapper .popup_shadow .sidebar_order .row h2 {
+  font: 800 25px 'Muller';
+  margin: 0;
+}
+.wrapper .popup_shadow .sidebar_order .row h2.popup_close {
+  transform: rotate(45deg);
+  cursor: pointer;
+}
+.wrapper .popup_shadow .sidebar_order .row .col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 25px;
+}
+.wrapper .popup_shadow .sidebar_order .row .col p {
+  font: bold 16px 'Muller';
+  margin: 0;
+}
+.wrapper .popup_shadow .sidebar_order .row .col .inline {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.wrapper .popup_shadow .sidebar_order .row .col .inline .block {
+  height: 50px;
+  width: 143px;
+  border-radius: 3px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.wrapper .popup_shadow .sidebar_order .row .col .inline .block .str {
+  height: 18px;
+  width: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #d7d8da;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.wrapper .popup_shadow .sidebar_order .row .col .inline .block .str p {
+  color: white;
+  font-size: 17px;
+  margin: 0;
+}
+.wrapper .popup_shadow .sidebar_order .row .col .inline .block .str:last-child p {
+  position: relative;
+  top: 2px;
+}
+.wrapper .popup_shadow .sidebar_order .row .col .inline .block .value {
+  margin: 10px;
+  font: 17px 'Muller';
+}
+.wrapper .popup_shadow .sidebar_order .row .col .inline .value {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.wrapper .popup_shadow .sidebar_order .row .col .inline .value p {
+  margin-right: 10px;
+}
+.wrapper .popup_shadow .sidebar_order .block_gray {
+  background-color: #f4f4f6;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 40px 25px;
+  margin-top: auto;
+}
+.wrapper .popup_shadow .sidebar_order .block_gray .col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.wrapper .popup_shadow .sidebar_order .block_gray .col p {
+  font: 800 30px 'Muller';
+  margin: 0;
+}
+.wrapper .popup_shadow .sidebar_order .block_gray .col p.small {
+  font: 12px 'Muller';
+  color: #777778;
+  margin-bottom: 12px;
+}
+.wrapper .popup_shadow .sidebar_order .block_gray .col p span {
+  font: bold 18px 'Muller';
+}
+.wrapper .popup_shadow .sidebar_order .block_gray .col a {
+  font: bold 16px 'Muller';
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 54px;
+  width: 170px;
+  border-radius: 27px;
+  background-color: #ff9c36;
+}
+.wrapper .popup_shadow .sidebar_order .block_gray .col a.dell {
+  justify-content: flex-end;
+  margin-top: 60px;
+  background-color: transparent;
+  font: bold 11px 'Muller';
+  color: #777778;
+}
+.wrapper .popup_shadow .sidebar_order .block_gray .col a.dell img {
+  margin-left: 10px;
+}
+.wrapper .popup_shadow .sidebar_order.hide {
+  display: none;
+}
+.wrapper .popup_shadow .photo_detail {
+  max-width: 1000px;
+  padding-top: 100px;
+  max-height: 700px;
+  position: relative;
+  margin: auto;
+}
+.wrapper .popup_shadow .photo_detail.hide {
+  display: none;
+}
+.wrapper .popup_shadow .photo_detail .popup_close {
+  transform: rotate(45deg);
+  position: absolute;
+  right: -50px;
+  font: 500 45px 'Muller';
+  top: 90px;
+  cursor: pointer;
+  color: #b3b3b3;
+}
+.wrapper .popup_shadow .photo_detail .container {
+  height: 100%;
+}
+.wrapper .popup_shadow .photo_detail .container img {
+  max-height: 100%;
+}
+.wrapper .popup_shadow .photo_detail .container .slick-next,
+.wrapper .popup_shadow .photo_detail .container .slick-prev {
+  height: 50px;
+  width: 50px;
+  right: -75px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.wrapper .popup_shadow .photo_detail .container .slick-next:before,
+.wrapper .popup_shadow .photo_detail .container .slick-prev:before {
+  transform: rotate(0deg);
+  content: url(../img/images_ar.png);
+}
+.wrapper .popup_shadow .photo_detail .container .slick-prev {
+  right: auto;
+  left: -75px;
+}
+.wrapper .popup_shadow .photo_detail .container .slick-prev:before {
+  transform: rotate(180deg);
+  content: url(../img/images_ar.png);
+}
+.wrapper .popup_shadow .photo_detail .container .slick-dots {
+  bottom: -50px;
+  top: auto;
+  margin-left: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+.wrapper .popup_shadow .photo_detail .container .slick-dots li button {
+  height: 11px;
+  width: 11px;
+}
+.wrapper .popup_shadow.hide {
+  display: none;
+}
+.wrapper .collection .title {
+  margin-bottom: 50px;
+  background-color: #fff;
+}
+.wrapper .collection .title .content {
+  position: relative;
+}
+.wrapper .collection .title h1 {
+  font: 800 54px 'Muller';
+}
+.wrapper .collection .title p {
+  font: 16px/25px 'PF Adamant Pro';
+  width: 55%;
+}
+.wrapper .collection .title img {
+  position: absolute;
+  right: -120px;
+  top: -60px;
+  width: 600px;
+  z-index: 0;
+}
+.wrapper .collection .items {
+  background-color: #efefef;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 30px 0;
+}
+.wrapper .collection .items .content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.wrapper .collection .items .item {
+  height: 430px;
+  position: relative;
+  width: 430px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  background-color: #fff;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.wrapper .collection .items .item img {
+  min-width: 100%;
+  height: 310px;
+}
+.wrapper .collection .items .item img:hover + .zoom {
+  opacity: 1;
+}
+.wrapper .collection .items .item .zoom {
+  background-color: rgba(0, 0, 0, 0.4);
+  height: 310px;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.wrapper .collection .items .item .zoom img {
+  min-width: 45px;
+  height: 45px;
+}
+.wrapper .collection .items .item .zoom:hover {
+  opacity: 1;
+}
+.wrapper .collection .items .item .images {
+  display: none;
+}
+.wrapper .collection .items .item .row {
+  display: flex;
+  width: 100%;
+}
+.wrapper .collection .items .item .row .col {
+  padding: 30px 30px 20px 30px;
+}
+.wrapper .collection .items .item .row .col p {
+  font: bold 16px/28px 'Muller';
+  margin: 0;
+}
+.wrapper .collection .items .item .row .col a {
+  font: bold 12px 'Muller';
+  width: 111px;
+  height: 40px;
+  border-radius: 20px;
+  border: 1px solid #ff9c36;
+  color: #ff9c36;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.wrapper .collection .items .item .row .col:first-child {
+  flex-basis: 300px;
+}
+.wrapper .collection .items .item .row .col:last-child {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-basis: 170px;
+  border-left: 1px solid #efefef;
+}
+.wrapper .collection .items .item .row .col:last-child p {
+  font: bold 21px 'Muller';
+  margin-bottom: 15px;
+}
+.wrapper .collection .items .item.other img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+.wrapper .collection .items .item.other .link {
+  margin-top: 20px;
+  position: relative;
+  display: flex;
+  width: fit-content;
+  align-items: center;
+  font: bold 12px/12px 'Muller';
+  text-transform: uppercase;
+  color: white;
+  padding-bottom: 8px;
+  border-bottom: 3px solid white;
+  margin-bottom: 100px;
+  transition: all 1s;
+}
+.wrapper .collection .items .item.other .link:after {
+  margin-left: 40px;
+  transition: all 1s;
+  content: url(../img/ar_right.png);
+}
+.wrapper .collection .items .item.other .link.orange {
+  color: #ff9c36;
+  border-color: #ff9c36;
+}
+.wrapper .collection .items .item.other .link.orange:after {
+  margin-left: 40px;
+  content: url(../img/ar_right_orange.png);
+}
+.wrapper .collection .items .item.other p {
+  font: 800 25px 'Muller';
+  position: relative;
+  color: white;
+  text-align: center;
+}
+.wrapper .where_to_buy .title {
+  margin-bottom: 50px;
+  background-color: #fff;
+}
+.wrapper .where_to_buy .title .content {
+  position: relative;
+}
+.wrapper .where_to_buy .title h1 {
+  font: 800 54px 'Muller';
+}
+.wrapper .where_to_buy .title p {
+  font: 16px/25px 'PF Adamant Pro';
+  width: 55%;
+}
+.wrapper .where_to_buy .line {
+  width: 100%;
+  height: 1px;
+  background-color: #dddddd;
+}
+.wrapper .where_to_buy .location {
+  padding: 20px 0;
+}
+.wrapper .where_to_buy .location .content {
+  display: flex;
+  align-items: center;
+}
+.wrapper .where_to_buy .location .content a {
+  text-decoration: none;
+  padding: 12px 20px;
+  border: 1px solid #dddddd;
+  border-radius: 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font: bold 16px 'Muller';
+  color: black;
+  margin-right: 20px;
+}
+.wrapper .where_to_buy .location .content a:before {
+  content: url(../img/loc.png);
+  margin-right: 10px;
+}
+.wrapper .where_to_buy .location .content a.orange {
+  color: #ff9c36;
+  border-color: #ff9c36;
+}
+.wrapper .where_to_buy .location .content a.orange:before {
+  content: url(../img/loc_orange.png);
+}
+.wrapper .where_to_buy #map_where {
+  height: 500px;
+  width: 100%;
+}
+.wrapper .page_404 h1 {
+  font: 800 260px 'Muller';
+  color: #f0f0f0;
+  text-align: center;
+  margin-bottom: 0px;
+}
+.wrapper .page_404 h3 {
+  font: 800 54px 'Muller';
+  position: absolute;
+  left: 50%;
+  top: 208px;
+  transform: translate(-50%, 0);
+  white-space: nowrap;
+}
+.wrapper .page_404 a {
+  font: bold 16px 'Muller';
+  color: white;
+  text-transform: uppercase;
+  padding: 0 40px;
+  border-radius: 30px;
+  width: 150px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ff9c36;
+  height: 60px;
+}
+.wrapper .page_404 img {
+  position: absolute;
+  left: 50%;
+  bottom: 96px;
+  z-index: -1;
+  transform: translate(-50%, 0);
+  margin-top: 90px;
+}
+.wrapper .footer {
+  display: flex;
+  padding: 50px 100px;
+  background-color: #38393c;
+  justify-content: space-between;
+}
+.wrapper .footer p {
+  font: 14px 'Muller';
+  color: white;
+}
+.wrapper .footer p span {
+  color: #ff8304;
+}
+.wrapper .fullpage {
+  position: absolute;
+  width: inherit;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  top: 0;
+}
+.wrapper .fullpage .content {
+  margin-top: 0;
+}
+.sidebar {
+  width: 28px;
+  position: fixed;
+  z-index: 10;
+  right: 0;
+  height: 100%;
+  display: flex;
+  padding: 0px 16px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  top: 0;
+  background-color: #fff;
+  border-left: 1px solid #dddddd;
+}
+.sidebar .id_hide {
+  display: none;
+}
+.sidebar a.bag {
+  margin-top: 20px;
+  display: block;
+  position: relative;
+}
+.sidebar a.bag span {
+  position: absolute;
+  bottom: 0;
+  height: 14px;
+  width: 14px;
+  border-radius: 50%;
+  transform: translate(25%, 10%);
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ff9c36;
+  font: bold 9px/9px "Open Sans";
+}
+.sidebar .line {
+  height: 110px;
+  width: 1px;
+  background-color: #cecece;
+  margin: 30px 0;
+  margin-bottom: 50px;
+}
+.sidebar p {
+  text-decoration: none;
+  font: bold 12px/12px 'Muller';
+  text-transform: uppercase;
+  transform: rotate(-90deg);
+  word-wrap: unset;
+  white-space: nowrap;
+}
+.id_hide {
+  display: none;
+}

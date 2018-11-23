@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Оформление заказа</title>
+    <link rel="stylesheet" href="slick/slick.css">
+    <link rel="stylesheet" href="slick/slick-theme.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="header black">
+            <a href="index.html" class="logo"><img src="img/logo.png" alt=""></a>
+            <ul class="menu">
+                <li><a href="about_us.html">О компании</a></li>
+                <li><a href="production.html">Продукция</a></li>
+                <li><a href="make_to_order.html">На заказ</a></li>
+                <li><a href="where_buy.html">Где купить</a></li>
+                <li><a href="payment.html">Оплата и доставка</a></li>
+                <li><a href="contacts.html">Контакты</a></li>
+            </ul>
+            <a href="" class="lang">en</a>
+        </div>
+        <ul class="breadcrumbs gray">
+                <li><a href="">Главная</a></li>
+                <li><a href="">Оформление заказа</a></li>
+        </ul>
+        <div class="order_reg">
+            <div class="title">
+                <div class="content">
+                    <h1>Оформление заказа</h1>
+                </div>
+            </div>
+            <div class="content">
+                <p class="location">КУДА ДОСТАВИТЬ <a href="">Санкт - Петербург</a></p>
+                <ul class="divivery_type">
+                    <li class="active">
+                        <div class="check">
+                            <svg 
+                            xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink"
+                            width="20px" height="15px">
+                            <path fill-rule="evenodd"  fill="rgb(255, 255, 255)"
+                            d="M19.721,1.259 C19.350,0.886 18.748,0.886 18.376,1.259 L6.982,12.695 L2.602,8.299 C2.231,7.926 1.629,7.927 1.257,8.299 C0.886,8.672 0.886,9.276 1.257,9.649 L6.309,14.720 C6.681,15.093 7.283,15.093 7.654,14.720 L19.721,2.609 C20.093,2.236 20.093,1.631 19.721,1.259 Z"/>
+                            </svg>
+                        </div> 
+                        <p>Доставка</p>
+                    </li>
+                    <li class="">
+                            <div class="check">
+                                    <svg 
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                                    width="20px" height="15px">
+                                    <path fill-rule="evenodd"  fill="rgb(255, 255, 255)"
+                                    d="M19.721,1.259 C19.350,0.886 18.748,0.886 18.376,1.259 L6.982,12.695 L2.602,8.299 C2.231,7.926 1.629,7.927 1.257,8.299 C0.886,8.672 0.886,9.276 1.257,9.649 L6.309,14.720 C6.681,15.093 7.283,15.093 7.654,14.720 L19.721,2.609 C20.093,2.236 20.093,1.631 19.721,1.259 Z"/>
+                                    </svg>
+                            </div>
+                            <p>Cамовывоз <br><span>бесплатно</span></p>
+                    </li>
+                </ul>
+                <div class="deliv active">
+                    <h3>Выберите способ доставки</h3>
+                    <div class="delivery_method">
+                        <div class="item active">
+                            <img src="img/del_1.png" alt="">
+                                <p>Служба доставки CDEK</p>
+                        </div>
+                        <div class="item">
+                            <img src="img/del_2.png" alt="">
+                                <p>Яндекс. Доставка</p>
+                        </div>
+                        <div class="item">
+                            <img src="img/del_3.png" alt="">
+                                <p>Служба доставки PDP</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="left">
+                            <p class="col"><label for="sity">Населенный пункт</label><input id="sity" type="text" placeholder="Санкт-Петербург"></p>
+                            <div class="row">
+                                <p class="col"><label for="street">Улица</label><input class="correct" id="street" type="text" value="Ленина"></p> 
+                                <p class="col smoll"><label for="home">дом</label><input id="home" type="text"></p>
+                                <p class="col smoll"><label for="apartaments">кв./офис</label><input id="apartaments" type="text"></p>
+                            </div>
+                            <p class="col comment"><label for="sity">Коментарий</label><input id="sity" type="text"></p>
+                        </div>
+                        <div class="right">
+                            <p>Дата доставки<br><span>23.10.2017</span></p>
+                            <p>Стоимость доставки<br><span>350 руб.</span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="samov">
+                    <div class="row">
+                        <div class="col">
+                            <p class="bold">Пункт самовывоза находится по адресу:</p>
+                            <p>г. Санкт-Петербург, ул. Ленина, 64, БЦ. «Новая высота»</p>
+                            <p><a href="">Показать на карте</a></p>
+                        </div>
+                        <div class="col">
+                            <p class="bold">Можно забрать</p>
+                            <p>в пн, 9 окт.  10:00 – 20.30.</p>
+                        </div>
+                    </div>
+                </div>
+                <h3 class="personal">Укажите личные данные</h3>
+                <div class="row">
+                    <div class="left">
+                        <p class="col"><label for="name">Имя</label><input id="name" type="text"></p>
+                        <p class="col"><label for="mail">E-mail</label><input id="mail" type="text"></p>
+                        <p class="col"><label for="phone">телефон</label><input id="phone" type="text"></p>
+                    </div>
+                </div>
+                <h3>Выберите способ оплаты</h3>
+                <div class="pay">
+                    <div class="item active">
+                        <img src="img/pay_1.png" alt="">
+                            <p>Банковская карта</p>
+                    </div>
+                    <div class="item">
+                        <img src="img/pay_2.png" alt="">
+                            <p>PayPal</p>
+                    </div>
+                </div>
+                <div class="row"></div>
+                <div class="flex">
+                    <p><input id="privpol" type="checkbox"><label for="privpol">Я принимаю условия работы сайта и даю добровольное согласие на<br> обработку своих персональных данных</label></p><button>Оформить заказ</button>
+                </div>
+            </div>
+        </div>
+        <div class="popup_shadow hide">
+            <div class="sidebar_order hide">
+                <div class="row"><h2>Ваш заказ</h2><h2 class="popup_close">+</h2></div>
+                <div class="row">
+                    <img class="product" src="img/order.png" alt="">
+                    <div class="col">
+                        <p>Корпоративный набор 
+                                «Матрешки»</p>
+                        <div class="inline">
+                            <div class="block">
+                                <div class="str"><p>-</p></div>
+                                <div class="value">0</div>
+                                <div class="str"><p>+</p></div>
+                            </div>
+                            <div class="value">
+                                <p>3 760 Р</p>
+                                <a href="" class="delete"><img src="img/trash.png" alt=""></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <img class="product" src="img/order.png" alt="">
+                    <div class="col">
+                        <p>Корпоративный набор 
+                                «Матрешки»</p>
+                        <div class="inline">
+                            <div class="block">
+                                <div class="str"><p>-</p></div>
+                                <div class="value">0</div>
+                                <div class="str"><p>+</p></div>
+                            </div>
+                            <div class="value">
+                                <p>3 760 Р</p>
+                                <a href="" class="delete"><img src="img/trash.png" alt=""></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="block_gray">
+                    <div class="col">
+                        <p class="small">3 товара на сумму</p>
+                        <p>5 600 <span>Р</span></p>
+                    </div>
+                    <div class="col">
+                        <a href="">
+                            Заказать
+                        </a>
+                        <a href="" class="dell">Очистить корзину<img src="img/trash.png" alt=""></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="sidebar">
+        <a class="bag popup_open" href="">
+            <div class="id_hide">.sidebar_order</div>
+            <img src="img/bag.png" alt="">
+            <span>2</span>
+        </a>               
+        <div class="line"></div>
+        <p >Ваши заказы</p>
+    </div>
+</body>
+<script src="js/jquery-3.3.1.js"></script>
+<script src="slick/slick.min.js"></script>
+<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=a04eb654-97d8-49f5-bc36-c82b60a4d4e7" type="text/javascript"></script>
+<script src="js/script.js"></script>
+
+</html>
