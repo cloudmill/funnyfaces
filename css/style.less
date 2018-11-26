@@ -79,7 +79,6 @@ body{
     ::-moz-placeholder          {font: 16px @font_m; color: #94969b;}/* Firefox 19+ */
     :-moz-placeholder           {font: 16px @font_m; color: #94969b;}/* Firefox 18- */
     :-ms-input-placeholder {font: 16px @font_m; color: #94969b; }
-    overflow-x: hidden;
     width: ~"calc(100% - 60px)";
     margin-right: auto;
     a{
@@ -390,47 +389,76 @@ body{
                         display: flex;
                         width: 100%;
                         justify-content: space-between;
-                        a.item{
-                            display: block;
-                            width: 270px;
-                            position: relative;
-                            border: 1px solid #ddd;  
-                            margin-right: 28px;
-                            margin-bottom: 40px;
-                            height: 320px;
-                            &.show_img{
-                                border: 0;
-                                
-                                p{
-                                bottom: 0px;
-                                left: 0px;
+                        .container{
+                            width: 100%;
+                            display: flex;
+                            justify-content: center;
+                            a.item{
+                                display: block;
+                                width: 270px;
+                                position: relative;
+                                border: 1px solid #ddd;  
+                                margin-right: 28px;
+                                margin-bottom: 40px;
+                                height: 320px;
+                                &.show_img{
+                                    border: 0;
+                                    
+                                    p{
+                                    bottom: 0px;
+                                    left: 0px;
+                                    }
+                                    h3{
+                                        position: relative;
+                                        margin-top: 30px;
+                                        top: 0;
+                                        left: 0;
+                                    }
+                                }
+                                img{
+                                    max-width: 100%;
                                 }
                                 h3{
-                                    position: relative;
-                                    margin-top: 30px;
-                                    top: 0;
-                                    left: 0;
+                                    font: bold 17px @font_m;
+                                    color: #3d3b3b;
+                                    position: absolute;
+                                    margin: 0;
+                                    top: 30px;
+                                    left: 30px;
+                                    margin-right: 30px;
+                                }
+                                p{
+                                    margin: 0;
+                                    position: absolute;
+                                    bottom: 30px;
+                                    left: 30px;
+                                    font: 11px @font_m;
+                                    color: #969696;
                                 }
                             }
-                            img{
-                                max-width: 100%;
+                        }
+                        &.slider_news{
+                            .slick-next, .slick-prev{
+                                bottom: -73px;
+                                top: auto;
                             }
-                            h3{
-                                font: bold 17px @font_m;
-                                color: #3d3b3b;
-                                position: absolute;
-                                margin: 0;
-                                top: 30px;
-                                left: 30px;
-                                margin-right: 30px;
+                            .slick-next{
+                                &:before{
+                                    content: url(../img/big_ar_right_orange.png);
+                                }
+                                right: 50px;
+                                left: auto
                             }
-                            p{
-                                margin: 0;
-                                position: absolute;
-                                bottom: 30px;
-                                left: 30px;
-                                font: 11px @font_m;
-                                color: #969696;
+                            .slick-prev{
+                                &:before{
+                                    content: url(../img/big_ar_right_orange.png);
+                                }
+                                &.hide{
+                                    display: block;
+                                }
+                                right: auto;
+                                left: 50px;
+                                margin-bottom: 25px;
                             }
                         }
                     }
@@ -920,9 +948,10 @@ body{
                         align-items: center;
                         cursor: pointer;
                         background-color: #fff;
-                        height: 40px;
+                        min-height: 40px;
+                        max-height: 40px;
                         margin-right: 25px;
-                        width: 40px;
+                        min-width: 40px;
                         border-radius: 50%;
                         border: 1px solid #e5e5e5;
                     }
@@ -962,6 +991,9 @@ body{
                                 border-bottom: 1px dashed @c_orange;
                             }
                         }
+                        &:last-child{
+                            padding-right: 40px;
+                        }
                         
                     }
                 }
@@ -983,10 +1015,12 @@ body{
                     }
                 }
                 .row{
-                    
                     .col{
                         p{
                             font-size: 14px;
+                            &.time, &.value{
+                                display: none;
+                            }
                         }
                         flex-basis: 25%;
                         p.bold{
@@ -1019,6 +1053,7 @@ body{
             p{
                 font: 16px/25px @font_ad;
                 width: 45%;
+                padding-bottom: 20px;
             }
             margin-bottom: 50px;
         }
@@ -1062,11 +1097,11 @@ body{
                             color: #66686c;
                             &.question{
                                 position: absolute;
-                                top: 129px;
+                                top: 50%;
                                 left: 50%;
                                 margin: 0;
                                 padding-left: 5px;
-                                transform: translate(-50%,0);
+                                transform: translate(-50%,-91px);
                                 font-size: 35px;
                                 color: #7c6f57;
                                 &.disabled{
@@ -1103,9 +1138,9 @@ body{
                                 position: absolute;
                                 z-index: 0;
                                 left: 50%;
-                                top: 121px;
+                                top: 50%;
                                 margin-left: 4px;
-                                transform: translate(-50%,0);
+                                transform: translate(-50%,-94px);
                                 max-height: 50px;
                                 max-width: 50px;
                             }
@@ -1196,7 +1231,7 @@ body{
                                 height: 100%;
                                 flex-basis: 50%;
                                 padding: 0 50px;
-                                font: bold 12px @font_m;
+                                font: bold 14px @font_m;
                                 text-transform: uppercase;
                                 color: #dddddd;
                                 span{
@@ -1233,6 +1268,7 @@ body{
                                     border-radius: 50%;
                                     border: 2px dashed @c_orange;
                                     color: @c_orange;
+                                    transform: translate(-50%,0);
                                     &.disabled{
                                         display: none;
                                     }
@@ -1241,6 +1277,7 @@ body{
                                     margin-left: -55px;
                                     top: 100px;
                                     z-index: 1;
+                                    transform: translate(-50%,0);
                                 }
                             }
                             &.opacity{
