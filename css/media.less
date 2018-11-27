@@ -396,28 +396,30 @@
                 background: #fff;
             }
             ul.menu{
+                animation: slide_out_right 0.5s;
+                z-index: 12;
+                width: 200px;
                 display: none;
-                &.active{
-                    z-index: 12;
-                    width: 200px;
+                flex-direction: column;
+                height: 300px;
+                right: 0;
+                left: auto;
+                transform: translate(100%,0);
+                padding: 30px;
+                background-color: #fff;;
+                border-radius: 0 0 0 5px;
+                li{
+                    a{
+                        color: black;
+                        border-color: black;
+                    }
+                }
+                .menu_close{
                     display: flex;
-                    flex-direction: column;
-                    height: 300px;
-                    right: 0;
-                    left: auto;
-                    transform: none;
-                    padding: 30px;
-                    background-color: #fff;;
-                    border-radius: 0 0 0 5px;
-                    li{
-                        a{
-                            color: black;
-                            border-color: black;
-                        }
-                    }
-                    .menu_close{
-                        display: flex;
-                    }
+                }
+                &.active{
+                    visibility: visible;
+                    animation: slide_in_right 0.5s forwards;
                 }
             }
             a.lang{

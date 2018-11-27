@@ -248,27 +248,29 @@
     background: #fff;
   }
   .wrapper .header ul.menu {
-    display: none;
-  }
-  .wrapper .header ul.menu.active {
+    animation: slide_out_right 0.5s;
     z-index: 12;
     width: 200px;
-    display: flex;
+    display: none;
     flex-direction: column;
     height: 300px;
     right: 0;
     left: auto;
-    transform: none;
+    transform: translate(100%, 0);
     padding: 30px;
     background-color: #fff;
     border-radius: 0 0 0 5px;
   }
-  .wrapper .header ul.menu.active li a {
+  .wrapper .header ul.menu li a {
     color: black;
     border-color: black;
   }
-  .wrapper .header ul.menu.active .menu_close {
+  .wrapper .header ul.menu .menu_close {
     display: flex;
+  }
+  .wrapper .header ul.menu.active {
+    visibility: visible;
+    animation: slide_in_right 0.5s forwards;
   }
   .wrapper .header a.lang {
     display: none;

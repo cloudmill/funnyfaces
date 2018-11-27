@@ -89,6 +89,8 @@ $(document).ready(function(){
         $(this).addClass('active');
     })
     var kolvo = 0;
+    var kolvo_ar = [];
+    for (i = 0; i< 100; i++){kolvo_ar[i]=0}
     $('.make_postc .postcard .row .col .str').click(function(){
         if($(this).index()==0 && kolvo!=0){
             kolvo--;
@@ -99,13 +101,47 @@ $(document).ready(function(){
         console.log($(this).index())
         $('.make_postc .postcard .value').text(kolvo);
     })
+    
+    $('.sidebar_order .row .col .inline .block .str').click(function(){
+        index = $(this).parent().parent().parent().parent().index()-1
+        if($(this).index()==0 && kolvo_ar[index]!=0){
+            kolvo_ar[index]--;
+        }
+        if($(this).index()==2){
+            kolvo_ar[index]++;
+        }
+        console.log(kolvo_ar[index])
+        $('.sidebar_order .row').eq(index+1).find('.col .inline .block .value').text(kolvo_ar[index]);
+    })
+    $('.sidebar_order .row .col .inline .value .delete').click(function(){
+        event.preventDefault()
+        index = $('.sidebar_order .row .col .inline .value .delete').index(this)+ 1;
+        $('.sidebar_order .row').eq(index).remove();
+    })
+    $('.sidebar_order .dell').click(function(){
+        event.preventDefault()
+        $('.sidebar_order > .row +.row').remove();
+    })
+
+
+
     $('.popup_open').click(function(event){
         event.preventDefault();
+        $('.popup_shadow').css('display','block');
         $('.popup_shadow').removeClass('hide');
         var class_popap = String($(this).children('.id_hide').text());
+        if(class_popap == ".sidebar_order"){
+            $('.wrapper .popup_shadow .sidebar_order').fadeTo(0, 1)
+            $('.popup_shadow .sidebar_order').removeClass('hide');
+        }
         $('.popup_shadow').children(class_popap).removeClass('hide');
-        $('html').css('overflow','hidden');
+        if(class_popap == ".new_detal_popup"){
+            $('html').css('overflow','hidden');
+        }
+        
+        
     })
+    
     $('.popup_close').click(function(){
         event.preventDefault()
         $('.popup_shadow').addClass('hide');
@@ -125,16 +161,23 @@ $(document).ready(function(){
             dots : true,
             infinity: false
         })
+        $('.popup_shadow').css('display','block');
         $('.popup_shadow').removeClass('hide');
         $('.popup_shadow .photo_detail').removeClass('hide');
 
     })
     $('.burger_menu').click(function(){
+        $('.header ul.menu').css('display','flex');
         $('.header ul.menu').addClass('active');
     })
     $('.menu_close').click(function(){
         $('.header ul.menu').removeClass('active');
     })
+
+
+
+    
+    
     
 
 
