@@ -553,6 +553,16 @@
     padding: 15px 0px;
     text-align: center;
   }
+  .wrapper .make_to_order .make_postc .make .block.logo_on_postcard .title a.add {
+    width: 100%;
+    top: auto;
+    bottom: 0;
+    height: 50%;
+  }
+  .wrapper .make_to_order .make_postc .make .block.logo_on_postcard .title a.add::before {
+    width: 600px;
+    height: 600px;
+  }
   .wrapper .make_to_order .make_postc .make .navigation {
     justify-content: space-between;
     flex-wrap: wrap;

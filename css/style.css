@@ -88,6 +88,10 @@ body {
   top: 0;
   margin: 20px;
   flex-basis: 100px;
+  transition: all 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+.wrapper .header .logo:hover {
+  transform: scale(1.1);
 }
 .wrapper .header ul.menu {
   padding: 0;
@@ -143,6 +147,7 @@ body {
   transform: rotate(45deg);
 }
 .wrapper .header a.lang {
+  transition: all 0.25s cubic-bezier(0.215, 0.61, 0.355, 1);
   display: flex;
   font: 500 13px/13px 'Avenir Next Cyr';
   color: white;
@@ -151,8 +156,14 @@ body {
   height: 30px;
   width: 30px;
   border-radius: 50%;
+  border: 1px transparent solid;
   background-color: #38393c;
   margin-right: 45px;
+}
+.wrapper .header a.lang:hover {
+  background-color: #fff;
+  border-color: black;
+  color: black;
 }
 .wrapper .header .burger_menu {
   display: none;
@@ -206,8 +217,15 @@ body {
   width: 900px;
   margin: auto;
 }
-.wrapper .content a.link:hover::after {
-  animation: fade_out_str 1s forwards;
+.wrapper .content a.link {
+  z-index: 1;
+  position: relative;
+}
+.wrapper .content a.link:after {
+  transition: all 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+.wrapper .content a.link:hover:after {
+  transform: rotate(90deg);
 }
 .wrapper .slider {
   height: 100%;
@@ -452,8 +470,17 @@ body {
   position: relative;
   overflow: hidden;
 }
+.wrapper .slider .item .section.footer_slide .top_block {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 75px;
+  background-color: #333039;
+}
 .wrapper .slider .item .section.footer_slide #map {
-  height: 100%;
+  height: calc(100% - 75px);
+  top: 75px;
   width: 100%;
   position: absolute;
 }
@@ -556,6 +583,7 @@ body {
   margin: 0 auto;
 }
 .wrapper .breadcrumbs li a {
+  transition: all 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
   font: 13px 'Muller';
   color: white;
   text-decoration: none;
@@ -894,10 +922,14 @@ body {
   padding: 0 40px;
   padding-top: 40px;
 }
+.wrapper .order_reg .content .flex p {
+  flex-basis: 80%;
+}
 .wrapper .order_reg .content .flex button {
   border-radius: 30px;
   padding: 0 30px;
   height: 60px;
+  flex-basis: 222px;
   background-color: #ff9c36;
   font: bold 16px 'Muller';
   color: white;
@@ -1075,6 +1107,8 @@ body {
 }
 .wrapper .make_to_order .make_postc .make .row .col a {
   font: bold 12px 'Muller';
+  position: relative;
+  z-index: 1;
   color: #ff9c36;
   max-width: 330px;
   text-transform: uppercase;
@@ -1085,16 +1119,40 @@ body {
   border: 1px solid #ff9c36;
   align-items: center;
   margin-top: 30px;
+  transition: transform 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
+  overflow: hidden;
 }
 .wrapper .make_to_order .make_postc .make .row .col a span {
   font-size: 20px;
 }
 .wrapper .make_to_order .make_postc .make .row .col a.selected {
   border-color: #83d16f;
-  color: black;
 }
 .wrapper .make_to_order .make_postc .make .row .col a.selected span {
   transform: rotate(45deg);
+}
+.wrapper .make_to_order .make_postc .make .row .col a.selected:before {
+  background-color: #83d16f;
+}
+.wrapper .make_to_order .make_postc .make .row .col a:before {
+  content: '';
+  display: block;
+  transition: transform 1s cubic-bezier(0.215, 0.61, 0.355, 1);
+  height: 400px;
+  width: 400px;
+  transform: translate(-130%, -100%);
+  background-color: #ff9c36;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  z-index: -1;
+}
+.wrapper .make_to_order .make_postc .make .row .col a:hover {
+  color: white;
+}
+.wrapper .make_to_order .make_postc .make .row .col a:hover:before {
+  transform: translate(-50%, -50%);
 }
 .wrapper .make_to_order .make_postc .make .row .col img {
   position: relative;
@@ -1132,6 +1190,7 @@ body {
   background-color: transparent;
   border-radius: 32px;
   color: #ff9c36;
+  transition: all 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
   text-align: center;
   font: bold 16px 'Muller';
 }
@@ -1140,6 +1199,16 @@ body {
   border-color: #e2e2e2;
   color: #a8a9a9;
   cursor: default;
+}
+.wrapper .make_to_order .make_postc .make .navigation > a.disabled:hover {
+  background-color: #e2e2e2;
+  color: #a8a9a9;
+  box-shadow: 0 0 0px 0px #ff9b367c;
+}
+.wrapper .make_to_order .make_postc .make .navigation > a:hover {
+  background-color: #ff9c36;
+  color: white;
+  box-shadow: 0 0 20px 0px #ff9b367c;
 }
 .wrapper .make_to_order .make_postc .make .navigation ul {
   list-style: none;
@@ -1158,13 +1227,22 @@ body {
   border-radius: 50%;
   border: 1px solid #a8a9a9;
   background-color: transparent;
+  box-shadow: 0 0 0 0px #a8a9a9;
   color: #a8a9a9;
   font: 500 16px 'Muller';
+  transition: all 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+.wrapper .make_to_order .make_postc .make .navigation ul li a:hover {
+  box-shadow: 0 0 20px 0px #a8a9a9;
 }
 .wrapper .make_to_order .make_postc .make .navigation ul li.active a {
+  box-shadow: 0 0 0 0px #ff9b367c;
   color: white;
   background-color: #ff9c36;
   border-color: #ff9c36;
+}
+.wrapper .make_to_order .make_postc .make .navigation ul li.active a:hover {
+  box-shadow: 0 0 20px 0px #ff9b367c;
 }
 .wrapper .make_to_order .make_postc .make .block {
   display: none;
@@ -1200,13 +1278,32 @@ body {
   display: none;
 }
 .wrapper .make_to_order .make_postc .make .block.logo_on_postcard .title a.add {
-  background-color: #ff9c36;
   color: white;
   width: 50%;
   padding: 0;
   position: absolute;
+  z-index: 1;
   top: 0;
+  background-color: #83d16f;
+  overflow: hidden;
   right: 0;
+}
+.wrapper .make_to_order .make_postc .make .block.logo_on_postcard .title a.add:before {
+  content: '';
+  display: block;
+  transition: transform 1s cubic-bezier(0.215, 0.61, 0.355, 1);
+  height: 460px;
+  width: 460px;
+  transform: translate(-50%, -50%);
+  background-color: #ff9c36;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  z-index: -1;
+}
+.wrapper .make_to_order .make_postc .make .block.logo_on_postcard .title a.add:hover:before {
+  transform: translate(40%, -100%);
 }
 .wrapper .make_to_order .make_postc .make .block.logo_on_postcard .row .col .question {
   display: flex;
@@ -1295,9 +1392,11 @@ body {
 }
 .wrapper .make_to_order .make_postc .postcard .row .col .block .str:last-child p {
   position: relative;
-  top: 2px;
+  top: 0px;
 }
 .wrapper .make_to_order .make_postc .postcard .row .col .block .value {
+  width: 20px;
+  text-align: center;
   font: 17px 'Muller';
 }
 .wrapper .make_to_order .make_postc .postcard .row .col a {
@@ -1678,6 +1777,9 @@ body {
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid #dcdcdc;
+  background-color: #fff;
+  position: relative;
+  top: 0;
 }
 .wrapper .popup_shadow .sidebar_order .row .product {
   width: 75px;
@@ -1747,10 +1849,13 @@ body {
 }
 .wrapper .popup_shadow .sidebar_order .row .col .inline .block .str:last-child p {
   position: relative;
-  top: 2px;
+  top: 0px;
 }
 .wrapper .popup_shadow .sidebar_order .row .col .inline .block .value {
   margin: 10px;
+  width: 20px;
+  display: flex;
+  justify-content: center;
   font: 17px 'Muller';
 }
 .wrapper .popup_shadow .sidebar_order .row .col .inline .value {
@@ -1760,6 +1865,10 @@ body {
 }
 .wrapper .popup_shadow .sidebar_order .row .col .inline .value p {
   margin-right: 10px;
+}
+.wrapper .popup_shadow .sidebar_order .row.del {
+  z-index: 0;
+  animation: perspectiveOut 0.5s forwards;
 }
 .wrapper .popup_shadow .sidebar_order .block_gray {
   background-color: #f4f4f6;
@@ -2218,8 +2327,34 @@ body {
 .id_hide {
   display: none;
 }
+.orange_button {
+  position: relative;
+  z-index: 1;
+  background-color: transparent !important;
+  overflow: hidden;
+  border: 1px solid transparent;
+}
+.orange_button:before {
+  content: '';
+  display: block;
+  border-radius: 50%;
+  background-color: #ff9c36;
+  z-index: -1;
+  position: absolute;
+  height: 200px;
+  width: calc(100% + 10px);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: transform 1s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
 .orange_button:hover {
+  color: #ff9c36 !important;
+  border: 1px solid #ff9c36 !important;
   animation: radial-pulse 1s infinite;
+}
+.orange_button:hover:before {
+  transform: translate(20%, -110%);
 }
 @keyframes slide_in_right {
   0% {
@@ -2270,6 +2405,23 @@ body {
     box-shadow: 0 0 0 0px #ff9b367c;
   }
   100% {
-    box-shadow: 0 0 0 20px #ff9b3600;
+    box-shadow: 0 0 20px 5px #ff9b3600;
+  }
+}
+@keyframes perspectiveOut {
+  0% {
+    transform: perspective(300px) rotateX(0deg) translateY(0px);
+  }
+  50% {
+    transform: perspective(300px) rotateX(45deg) translateY(30px);
+    opacity: 1;
+    height: 107px;
+    padding: 25px;
+  }
+  100% {
+    transform: perspective(300px) rotateX(60deg) translateY(-100px) translateZ(-50px);
+    opacity: 0;
+    height: 0;
+    padding: 0;
   }
 }

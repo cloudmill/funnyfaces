@@ -5,9 +5,18 @@ $(document).ready(function(){
         verticalSwiping : true,
         speed: 1000,
         vertical: true,
+        swipe:false,
         arrows: true,
         dots : true,
-        infinite: false
+        infinite: false,
+        responsive: [
+            {
+              breakpoint: 768,
+              settings: {
+                  swipe:true
+              }
+            }
+        ]
     })
     
     function slider_collection(){
@@ -116,11 +125,11 @@ $(document).ready(function(){
     $('.sidebar_order .row .col .inline .value .delete').click(function(){
         event.preventDefault()
         index = $('.sidebar_order .row .col .inline .value .delete').index(this)+ 1;
-        $('.sidebar_order .row').eq(index).remove();
+        $('.sidebar_order .row').eq(index).addClass('del');
     })
     $('.sidebar_order .dell').click(function(){
         event.preventDefault()
-        $('.sidebar_order > .row +.row').remove();
+        $('.sidebar_order > .row +.row').addClass('del');
     })
 
 
