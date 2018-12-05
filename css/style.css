@@ -161,9 +161,9 @@ body {
   margin-right: 45px;
 }
 .wrapper .header a.lang:hover {
-  background-color: #fff;
-  border-color: black;
-  color: black;
+  background-color: transparent;
+  color: white;
+  border-color: white;
 }
 .wrapper .header .burger_menu {
   display: none;
@@ -206,6 +206,11 @@ body {
 .wrapper .header.none_bg {
   background-color: transparent;
 }
+.wrapper .header.black a.lang:hover {
+  background-color: transparent;
+  border-color: black;
+  color: black;
+}
 .wrapper .header.black .menu li a {
   color: #38393c;
 }
@@ -220,12 +225,33 @@ body {
 .wrapper .content a.link {
   z-index: 1;
   position: relative;
+  padding-top: 8px;
+}
+.wrapper .content a.link:before {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: #fff;
+  animation-duration: 0.5s;
+  animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  animation-fill-mode: forwards;
+  animation-name: fadeout_in_reverse;
+}
+.wrapper .content a.link.orange:before {
+  background-color: #ff9c36;
 }
 .wrapper .content a.link:after {
   transition: all 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 .wrapper .content a.link:hover:after {
   transform: rotate(90deg);
+}
+.wrapper .content a.link:hover:before {
+  animation-name: fadeout_in;
 }
 .wrapper .slider {
   height: 100%;
@@ -276,7 +302,6 @@ body {
   text-transform: uppercase;
   color: white;
   padding-bottom: 8px;
-  border-bottom: 3px solid white;
   margin-bottom: 100px;
   transition: all 0.5s;
 }
@@ -705,7 +730,6 @@ body {
   text-transform: uppercase;
   color: white;
   padding-bottom: 8px;
-  border-bottom: 3px solid white;
   margin-bottom: 100px;
   transition: all 0.5s;
 }
@@ -1447,7 +1471,6 @@ body {
   text-transform: uppercase;
   color: white;
   padding-bottom: 8px;
-  border-bottom: 3px solid white;
   margin-bottom: 100px;
   transition: all 0.5s;
 }
@@ -1644,7 +1667,6 @@ body {
   text-transform: uppercase;
   color: white;
   padding-bottom: 8px;
-  border-bottom: 3px solid white;
   margin: 50px auto;
   margin-top: 20px;
   transition: all 0.5s;
@@ -1734,7 +1756,6 @@ body {
   text-transform: uppercase;
   color: white;
   padding-bottom: 8px;
-  border-bottom: 3px solid white;
   margin-bottom: 0px;
   transition: all 0.5s;
 }
@@ -2423,5 +2444,41 @@ body {
     opacity: 0;
     height: 0;
     padding: 0;
+  }
+}
+@keyframes fadeout_in {
+  0% {
+    opacity: 1;
+    width: 100%;
+    left: 0x;
+    bottom: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    width: 28px;
+    left: -28px;
+    bottom: 50%;
+    transform: rotate(90deg);
+  }
+}
+@keyframes fadeout_in_reverse {
+  0% {
+    opacity: 1;
+    width: 28px;
+    left: -28px;
+    bottom: 50%;
+    transform: rotate(90deg);
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    width: 100%;
+    left: 0px;
+    bottom: 0;
   }
 }
