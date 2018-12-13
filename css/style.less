@@ -184,9 +184,15 @@ body{
                 display: none;
                 position: absolute;
                 right: 5px;
+                height: 31px;
+                cursor: pointer;
                 top: 5px;
                 font: 40px @font_m;
                 transform: rotate(45deg);
+                transition: transform @time_animation @cubic-bezier;
+                &:hover{
+                    transform: rotate(215deg);
+                }
             }
         }
         a.lang{
@@ -485,6 +491,7 @@ body{
                                 margin-right: 28px;
                                 margin-bottom: 40px;
                                 height: 320px;
+                                transition: transform @time_animation @cubic-bezier;
                                 &.show_img{
                                     border: 0;
                                     
@@ -518,6 +525,9 @@ body{
                                     left: 30px;
                                     font: 11px @font_m;
                                     color: #969696;
+                                }
+                                &:hover{
+                                    transform: scale(1.03)
                                 }
                             }
                         }
@@ -872,9 +882,11 @@ body{
                         width: 48px;
                         border-radius: 50%;
                         border: 1px solid #e3e3e3;
-                        background-color: transparent;
+                        background-color: white;
+                        transition: all @time_animation @cubic-bezier;
                         svg path{
                             fill: #e3e3e3;
+                            transition: fill @time_animation @cubic-bezier;
                         }
                     }
                     p{
@@ -923,8 +935,10 @@ body{
                     border-radius: 7px;
                     align-items: center;
                     border: 2px solid #f5f5f5;
+                    transition: border @time_animation @cubic-bezier;
                     p{
-                     font: 500 14px @font_m;  
+                     font: 500 14px @font_m;
+                     transition: color @time_animation @cubic-bezier;
                      padding: 0;
                      margin-top: 50px;
                     }
@@ -932,8 +946,14 @@ body{
                         border: 2px solid @c_orange;
                         p{
                             color: @c_orange;
-                            
                         }
+                        &:hover{
+                            border: 2px solid @c_orange;
+                        }
+                       
+                    }
+                    &:hover{
+                        border: 2px solid #ff9b3657;
                     }
                     &:first-child{
                         margin-left: 0;
@@ -1039,7 +1059,9 @@ body{
                 }
                 label{
                     display: flex;
+                    font: 16px @font_m;
                     user-select: none;
+                    align-items: center;
                     cursor: pointer;
                     &:before{
                         content: '';
@@ -1054,6 +1076,7 @@ body{
                         min-width: 40px;
                         border-radius: 50%;
                         border: 1px solid #e5e5e5;
+                        transition: all @time_animation @cubic-bezier;
                     }
                 }
                 input{
@@ -1223,7 +1246,7 @@ body{
                             border: 1px solid @c_orange;
                             align-items: center;
                             margin-top: 30px;
-                            transition: transform @time_animation @cubic-bezier;
+                            transition: all @time_animation @cubic-bezier;
                             overflow: hidden;
                             span{
                                 font-size: 20px;
@@ -1289,12 +1312,15 @@ body{
                     justify-content: space-between;
                     >a{
                         display: flex;
+                        position: relative;
                         justify-content: center;
                         align-items: center;
                         width: 175px;
                         height: 64px;
                         border: 1px solid @c_orange;
                         background-color: transparent;
+                        overflow: hidden;
+                        z-index: 1;
                         border-radius: 32px;
                         color:  @c_orange;
                         transition: all @time_animation @cubic-bezier;
@@ -1306,15 +1332,31 @@ body{
                             color: #a8a9a9;
                             cursor: default;
                             &:hover{
-                                background-color: #e2e2e2;
                                 color: #a8a9a9;
-                                box-shadow: 0 0 0px 0px #ff9b367c;
+                                &:before{
+                                    transform: translate(-130%,-100%);
+                                }
                             }
                         }
-                        &:hover{
+                        &:before{
+                            content: '';
+                            display: block;
+                            transition: transform @time_animation*2 @cubic-bezier;
+                            height: 200px;
+                            width: 200px;
+                            transform: translate(-130%,-100%);
                             background-color: @c_orange;
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            border-radius: 50%;
+                            z-index: -1;
+                        }
+                        &:hover{
                             color: white;
-                            box-shadow: 0 0 20px 0px #ff9b367c;
+                            &:before{
+                                transform: translate(-50%,-50%);
+                            }
                         }
                     }
                     ul{
@@ -2252,18 +2294,37 @@ body{
                         a{
                             font: bold 12px @font_m;
                             width: 111px;
+                            position: relative;
+                            z-index: 1;
                             height: 40px;
                             border-radius: 20px;
                             border: 1px solid @c_orange;
+                            overflow: hidden;
                             color: @c_orange;
                             text-transform: uppercase;
                             display: flex;
                             justify-content: center;
                             align-items: center;
                             transition: all 0.3s;
-                            &:hover{
+                            &:before{
+                                content: '';
+                                display: block;
+                                transition: transform @time_animation*2 @cubic-bezier;
+                                height: 160px;
+                                width: 160px;
+                                transform: translate(-130%,-100%);
                                 background-color: @c_orange;
+                                position: absolute;
+                                top: 50%;
+                                left: 50%;
+                                border-radius: 50%;
+                                z-index: -1;
+                            }
+                            &:hover{
                                 color: white;
+                                &:before{
+                                    transform: translate(-50%,-50%);
+                                }
                             }
                         }
                         &:first-child{
@@ -2302,7 +2363,6 @@ body{
                         text-transform: uppercase;
                         color: white;
                         padding-bottom: 8px;
-                        border-bottom: 3px solid white;
                         margin-bottom: 100px;
                         transition: all @time_animation;
                         &:after{
@@ -2360,23 +2420,62 @@ body{
                 a{
                     text-decoration: none;
                     padding: 12px 20px;
-                    border: 1px solid #dddddd;
+                    position: relative;
                     border-radius: 3px;
                     display: flex;
                     justify-content: center;
+                    overflow: hidden;
                     align-items: center;
                     font: bold 16px @font_m;
-                    color: black;
                     margin-right: 20px;
-                    &:before{
-                        content: url(../img/loc.png);
-                        margin-right: 10px;
+                    border: 1px solid @c_orange;
+                    color: @c_orange;
+                    transition: all @time_animation @cubic-bezier;
+                    &:after{
+                        content: '';
+                        display: block;
+                        transition: all @time_animation*3 @cubic-bezier;
+                        height: 300px;
+                        width: 300px;
+                        transform: translate(-130%,-100%);
+                        background-color: @c_orange;
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        border-radius: 50%;
+                        z-index: -1;
                     }
-                    &.orange{
-                        color: @c_orange;
-                        border-color: @c_orange;
+                    &:hover{
+                        color: white;
+                        &:after{
+                            transform: translate(-50%,-50%);
+                        }
                         &:before{
-                            content: url(../img/loc_orange.png);
+                            content: url(../img/loc_white.png);
+                        }
+                    }
+                    &:before{
+                        content: url(../img/loc_orange.png);
+                        margin-right: 10px;
+                        transition: all @time_animation @cubic-bezier;
+                    }
+                    &.active{
+                        &:after{
+                            background-color: #dddddd;
+                        }
+                        border: 1px solid #dddddd;
+                        cursor: default;
+                        color: black;
+                        &:before{
+                            content: url(../img/loc.png);
+                        }
+                        &:hover{
+                            &:before{
+                                content: url(../img/loc.png);
+                            }
+                            &:after{
+                                transform: translate(-130%,-100%);
+                            }
                         }
                     }
                 }
@@ -2507,6 +2606,11 @@ body{
 }
 .id_hide{
     display: none;
+}
+
+[class*="ymaps-2"][class*="-ground-pane"] {
+    filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale");
+    -webkit-filter: grayscale(100%);
 }
 .orange_button{
     position: relative;

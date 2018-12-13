@@ -66,6 +66,9 @@
   .wrapper .contacts .conection .content .row .col .block {
     width: 300px;
   }
+  .wrapper .popup_shadow .photo_detail {
+    max-width: 768px;
+  }
 }
 @media (max-width: 1100px) {
   .wrapper .header ul.menu {
@@ -220,6 +223,9 @@
     flex-direction: column;
     align-items: center;
   }
+  .wrapper .popup_shadow .photo_detail {
+    max-width: 80%;
+  }
 }
 @media (max-width: 950px) {
   .wrapper .breadcrumbs {
@@ -260,6 +266,7 @@
     padding: 30px;
     background-color: #fff;
     border-radius: 0 0 0 5px;
+    box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.3);
   }
   .wrapper .header ul.menu li a {
     color: black;
@@ -283,15 +290,24 @@
     width: 50px;
     border-left: 1px solid #dddddd;
     height: 100%;
+    cursor: pointer;
   }
   .wrapper .header .burger_menu:before,
   .wrapper .header .burger_menu:after {
     content: '';
+    position: relative;
+    transition: 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
     display: block;
     width: 20px;
     height: 2px;
     background-color: #000;
     margin: 2.5px 0;
+  }
+  .wrapper .header .burger_menu:hover:before {
+    transform: translate(-15%, 0px);
+  }
+  .wrapper .header .burger_menu:hover:after {
+    transform: translate(15%, 0px);
   }
   .wrapper .header .cart.mini {
     display: flex;
@@ -434,6 +450,15 @@
   }
 }
 @media (max-width: 768px) {
+  .wrapper .popup_shadow .photo_detail {
+    max-width: 70%;
+  }
+  .wrapper .popup_shadow .photo_detail .container .slick-prev {
+    left: -55px;
+  }
+  .wrapper .popup_shadow .photo_detail .container .slick-next {
+    right: -55px;
+  }
   .wrapper .title .content h1 {
     font-size: 30px;
   }
@@ -506,6 +531,9 @@
   }
 }
 @media (max-width: 650px) {
+  .wrapper .popup_shadow .photo_detail {
+    max-width: 65%;
+  }
   .wrapper .order_reg .content.block p {
     padding: 5px 40px;
   }

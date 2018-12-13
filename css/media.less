@@ -115,7 +115,12 @@
                     }
                 }
             } 
-        } 
+        }
+        .popup_shadow{
+            .photo_detail{
+                max-width: 768px;
+            }
+        }
     }
 }
 @media(max-width : 1100px){
@@ -360,6 +365,11 @@
                 align-items: center;
             }
         }
+        .popup_shadow{
+            .photo_detail{
+                max-width: 80%;
+            }
+        }
     }
 }
 @media(max-width : 950px){
@@ -408,6 +418,7 @@
                 padding: 30px;
                 background-color: #fff;;
                 border-radius: 0 0 0 5px;
+                box-shadow: 0 0 40px 0 rgba(0,0,0,0.3);
                 li{
                     a{
                         color: black;
@@ -420,6 +431,7 @@
                 &.active{
                     visibility: visible;
                     animation: slide_in_right 0.5s forwards;
+                    
                 }
             }
             a.lang{
@@ -433,13 +445,24 @@
                 width: 50px;
                 border-left:1px solid #dddddd;
                 height: 100%;
+                cursor: pointer;
                 &:before, &:after{
                     content: '';
+                    position: relative;
+                    transition: 0.5s cubic-bezier(0.215, 0.610, 0.355, 1);
                     display: block;
                     width: 20px;
                     height: 2px;
                     background-color: #000;
                     margin: 2.5px 0;
+                }
+                &:hover{
+                    &:before{
+                        transform: translate(-15%,0px);
+                    }
+                    &:after{
+                        transform: translate(15%,0px);
+                    }
                 }
             }
             .cart.mini{
@@ -657,6 +680,19 @@
 }
 @media(max-width : 768px){
     .wrapper{
+        .popup_shadow{
+            .photo_detail{
+                max-width: 70%;
+                .container{
+                    .slick-prev{
+                        left: -55px;
+                    }
+                    .slick-next{
+                        right: -55px;
+                    }
+                }
+            }
+        }
         .title{
             .content{
                 h1{
@@ -772,6 +808,11 @@
 
 @media(max-width : 650px){
     .wrapper{
+        .popup_shadow{
+            .photo_detail{
+                max-width: 65%;
+            }
+        }
         .order_reg{
             .content.block{
                 p{

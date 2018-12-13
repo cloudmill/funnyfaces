@@ -1,4 +1,4 @@
-$(document).ready(function(){
+
     ymaps.ready(function () {
 
         var map = new ymaps.Map('map', {
@@ -59,58 +59,75 @@ $(document).ready(function(){
         })
         
     });
-    ymaps.ready(function () {
-        var myMap = new ymaps.Map('map_where', {
+    ymaps.ready(init);
+    var myMap;
+    var sities = [
+        'Москва',
+        'Санкт-Петербург'
+    ]
+    var names = [
+        'Гостинный двор',
+        'Гостинный двор'
+    ]
+    var location_mark = [
+        'ул. Садовая, 17',
+        'ул. Ленина, 20'
+    ]
+    var temp_coords = [
+        [0, 0],
+        [0, 0]
+    ]
+    function init() {
+        myMap = new ymaps.Map('map_where', {
                 center: [55.751574, 37.573856],
-                zoom: 9
+                zoom: 9,
+                controls: ['smallMapDefaultSet']    
             }, {
                 searchControlProvider: 'yandex#search'
-            }),
-    
-            // Создаём макет содержимого.
-            MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
-                '<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
-            ),
-    
-            myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
-                hintContent: 'Собственный значок метки',
-                balloonContent: 'Это красивая метка'
-            }, {
-                // Опции.
-                // Необходимо указать данный тип макета.
-                iconLayout: 'default#image',
-                // Своё изображение иконки метки.
-                iconImageHref: '../img/point.png',
-                // Размеры метки.
-                iconImageSize: [30, 42],
-                // Смещение левого верхнего угла иконки относительно
-                // её "ножки" (точки привязки).
-                iconImageOffset: [-5, -38]
-            }),
-    
-            myPlacemarkWithContent = new ymaps.Placemark([55.661574, 37.573856], {
-                hintContent: 'Собственный значок метки с контентом',
-                balloonContent: 'А эта — новогодняя',
-                iconContent: '12'
-            }, {
-                // Опции.
-                // Необходимо указать данный тип макета.
-                iconLayout: 'default#image',
-                // Своё изображение иконки метки.
-                iconImageHref: '../img/point.png',
-                // Размеры метки.
-                iconImageSize: [33, 50],
-                // Смещение левого верхнего угла иконки относительно
-                // её "ножки" (точки привязки).
-                iconImageOffset: [0, 0],
-                // Смещение слоя с содержимым относительно слоя с картинкой.
-                iconContentOffset: [0, 0],
-                // Макет содержимого.
-                iconContentLayout: MyIconContentLayout
             });
-    
-        myMap.geoObjects
-            .add(myPlacemark)
-            .add(myPlacemarkWithContent);
-    });
-})
+            myPlacemark = Array();
+            for(i in sities){
+                temp = sities[i]+", "+location_mark[i]
+                
+                x = 0;
+                y = 0;
+                ymaps.geocode(temp,{results:1}).then(
+                    function(res){  var MyGeoObj = res.geoObjects.get(0);
+                        x = MyGeoObj.geometry.getCoordinates()[0];
+                        y = MyGeoObj.geometry.getCoordinates()[1];
+                        console.log(x+' '+y)
+                        temp_coords[i] = [x,y]
+                myPlacemark[i] = new ymaps.Placemark(temp_coords[i], {
+                    hintContent:location_mark[i],
+                    balloonContentHeader: names[i],
+                    balloonContentBody: location_mark[i],
+                }, {
+                    iconLayout: 'default#image',
+                    iconImageHref: 'img/point.png',
+                    iconImageSize: [30, 42],
+                    // Смещение левого верхнего угла иконки относительно
+                    // её "ножки" (точки привязки).
+                    iconImageOffset: [-15, -42]
+                })
+                myMap.behaviors.disable('scrollZoom');
+                myMap.geoObjects.add(myPlacemark[i])
+                    })
+            }
+            
+    }
+    $('.where_to_buy .location a').click(function(){
+        event.preventDefault()
+        temp = $(this).text()
+        if(!$(this).hasClass('active')){
+            $('.where_to_buy .location a').removeClass('active')
+            $(this).addClass('active')
+        }
+        console.log(temp)
+        ymaps.geocode(temp,{results:1}).then(
+            function(res){  var MyGeoObj = res.geoObjects.get(0);
+                x = MyGeoObj.geometry.getCoordinates()[0];
+                y = MyGeoObj.geometry.getCoordinates()[1];
+                myMap.setCenter([x, y]);
+            }
+        )
+    })
